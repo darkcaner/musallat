@@ -17,3565 +17,925 @@ Private Type UDT_1_0043A5FC
 End Type
 
 
-Public Property Let FileName(Value) '45BF60
-  push ebp
-  mov ebp, esp
-  sub esp, 00000018h
-  push 00403896h ; ext_4010EC
-  mov eax, fs:[00000000h]
-  push eax
-  mov fs:[00000000h], esp
-  mov eax, 00000014h
-  call 00403890h ; ext_40109C
-  push ebx
-  push esi
-  push edi
-  mov var_18, esp
-  mov var_14, 00403020h
-  mov var_10, 00000000h
-  mov var_C, 00000000h
-  mov eax, Me
-  mov ecx, [eax]
-  mov edx, Me
-  push edx
-  call [ecx+00000004h]
-  mov var_4, 00000001h
-  mov var_4, 00000002h
-  push FFFFFFFFh
-  call [00401070h]
-  mov var_4, 00000003h
-  mov eax, Value
-  mov edx, [eax]
-  mov ecx, Me
-  add ecx, 00000038h
-  call [00401148h]
-  mov var_4, 00000004h
-  mov ecx, Me
-  mov edx, [ecx]
-  mov eax, Me
-  push eax
-  call [edx+00000090h]
-  mov ecx, Me
-  mov edx, [ecx]
-  mov eax, Me
-  push eax
-  call [edx+00000008h]
-  mov eax, var_10
-  mov ecx, var_20
-  mov fs:[00000000h], ecx
-  pop edi
-  pop esi
-  pop ebx
-  mov esp, ebp
-  pop ebp
-  retn 0008h
+Public Property Let FileName() '45BF60
+  loc_0045BF66: ext_4010EC
+  loc_0045BF7E: ext_40109C
+  loc_0045BFBA: call var_8004 = global_00401070(FFFFFFFFh, Me, 0, 0, 0)
+  loc_0045BFD2: call var_8008 = global_00401148
+  loc_0045BFE8: var_800C = VersionInfo.Proc_4_29_45E210
 End Sub
 
-Public Property Get FileName(arg_C) '45C010
-  push ebp
-  mov ebp, esp
-  sub esp, 00000018h
-  push 00403896h ; ext_4010EC
-  mov eax, fs:[00000000h]
-  push eax
-  mov fs:[00000000h], esp
-  mov eax, 00000018h
-  call 00403890h ; ext_40109C
-  push ebx
-  push esi
-  push edi
-  mov var_18, esp
-  mov var_14, 00403058h
-  mov var_10, 00000000h
-  mov var_C, 00000000h
-  mov eax, Me
-  mov ecx, [eax]
-  mov edx, Me
-  push edx
-  call [ecx+00000004h]
-  mov var_4, 00000001h
-  mov eax, arg_C
-  mov [eax], 00000000h
-  mov var_4, 00000002h
-  push FFFFFFFFh
-  call [00401070h]
-  mov var_4, 00000003h
-  mov ecx, Me
-  mov edx, [ecx+00000038h]
-  lea ecx, var_24
-  call [00401148h]
-  push 0045C0A1h
-  jmp 0045C0A0h
-  lea ecx, var_24
-  call [004011CCh]
-  ret
-  ret
-  mov edx, Me
-  mov eax, [edx]
-  mov ecx, Me
-  push ecx
-  call [eax+00000008h]
-  mov edx, arg_C
-  mov eax, var_24
-  mov [edx], eax
-  mov eax, var_10
-  mov ecx, var_20
-  mov fs:[00000000h], ecx
-  pop edi
-  pop esi
-  pop ebx
-  mov esp, ebp
-  pop ebp
-  retn 0008h
+Public Property Get FileName() '45C010
+  loc_0045C016: ext_4010EC
+  loc_0045C02E: ext_40109C
+  loc_0045C073: call var_8004 = global_00401070(FFFFFFFFh, Me, 0, 0, 0)
+  loc_0045C089: call var_8008 = global_00401148
+  loc_0045C094: GoTo loc_0045C0A0
+  loc_0045C099: call var_800C = global_004011CC(global_0045C0A1)
+  loc_0045C09F: Exit Sub
+  loc_0045C0A0: ' Referenced from: 0045C094
 End Sub
 
-Public Property Let ModuleName(Value) '45C0D0
-  push ebp
-  mov ebp, esp
-  sub esp, 00000018h
-  push 00403896h ; ext_4010EC
-  mov eax, fs:[00000000h]
-  push eax
-  mov fs:[00000000h], esp
-  mov eax, 00000014h
-  call 00403890h ; ext_40109C
-  push ebx
-  push esi
-  push edi
-  mov var_18, esp
-  mov var_14, 00403088h
-  mov var_10, 00000000h
-  mov var_C, 00000000h
-  mov eax, Me
-  mov ecx, [eax]
-  mov edx, Me
-  push edx
-  call [ecx+00000004h]
-  mov var_4, 00000001h
-  mov var_4, 00000002h
-  push FFFFFFFFh
-  call [00401070h]
-  mov var_4, 00000003h
-  mov eax, Value
-  mov edx, [eax]
-  mov ecx, Me
-  add ecx, 00000034h
-  call [00401148h]
-  mov var_4, 00000004h
-  mov ecx, Me
-  mov edx, [ecx]
-  mov eax, Me
-  push eax
-  call [edx+00000090h]
-  mov ecx, Me
-  mov edx, [ecx]
-  mov eax, Me
-  push eax
-  call [edx+00000008h]
-  mov eax, var_10
-  mov ecx, var_20
-  mov fs:[00000000h], ecx
-  pop edi
-  pop esi
-  pop ebx
-  mov esp, ebp
-  pop ebp
-  retn 0008h
+Public Property Let ModuleName() '45C0D0
+  loc_0045C0D6: ext_4010EC
+  loc_0045C0EE: ext_40109C
+  loc_0045C12A: call var_8004 = global_00401070(FFFFFFFFh, Me, 0, 0, 0)
+  loc_0045C142: call var_8008 = global_00401148
+  loc_0045C158: var_800C = VersionInfo.Proc_4_29_45E210
 End Sub
 
-Public Property Get ModuleName(arg_C) '45C180
-  push ebp
-  mov ebp, esp
-  sub esp, 00000018h
-  push 00403896h ; ext_4010EC
-  mov eax, fs:[00000000h]
-  push eax
-  mov fs:[00000000h], esp
-  mov eax, 00000018h
-  call 00403890h ; ext_40109C
-  push ebx
-  push esi
-  push edi
-  mov var_18, esp
-  mov var_14, 004030C0h
-  mov var_10, 00000000h
-  mov var_C, 00000000h
-  mov eax, Me
-  mov ecx, [eax]
-  mov edx, Me
-  push edx
-  call [ecx+00000004h]
-  mov var_4, 00000001h
-  mov eax, arg_C
-  mov [eax], 00000000h
-  mov var_4, 00000002h
-  push FFFFFFFFh
-  call [00401070h]
-  mov var_4, 00000003h
-  mov ecx, Me
-  mov edx, [ecx+00000034h]
-  lea ecx, var_24
-  call [00401148h]
-  push 0045C211h
-  jmp 0045C210h
-  lea ecx, var_24
-  call [004011CCh]
-  ret
-  ret
-  mov edx, Me
-  mov eax, [edx]
-  mov ecx, Me
-  push ecx
-  call [eax+00000008h]
-  mov edx, arg_C
-  mov eax, var_24
-  mov [edx], eax
-  mov eax, var_10
-  mov ecx, var_20
-  mov fs:[00000000h], ecx
-  pop edi
-  pop esi
-  pop ebx
-  mov esp, ebp
-  pop ebp
-  retn 0008h
+Public Property Get ModuleName() '45C180
+  loc_0045C186: ext_4010EC
+  loc_0045C19E: ext_40109C
+  loc_0045C1E3: call var_8004 = global_00401070(FFFFFFFFh, Me, 0, 0, 0)
+  loc_0045C1F9: call var_8008 = global_00401148
+  loc_0045C204: GoTo loc_0045C210
+  loc_0045C209: call var_800C = global_004011CC(global_0045C211)
+  loc_0045C20F: Exit Sub
+  loc_0045C210: ' Referenced from: 0045C204
 End Sub
 
-Public Property Get Language(arg_C) '45C240
-  push ebp
-  mov ebp, esp
-  sub esp, 00000018h
-  push 00403896h ; ext_4010EC
-  mov eax, fs:[00000000h]
-  push eax
-  mov fs:[00000000h], esp
-  mov eax, 00000020h
-  call 00403890h ; ext_40109C
-  push ebx
-  push esi
-  push edi
-  mov var_18, esp
-  mov var_14, 004030F0h ; Chr(37)
-  mov var_10, 00000000h
-  mov var_C, 00000000h
-  mov eax, Me
-  mov ecx, [eax]
-  mov edx, Me
-  push edx
-  call [ecx+00000004h]
-  mov var_4, 00000001h
-  mov var_4, 00000002h
-  push FFFFFFFFh
-  call [00401070h]
-  mov var_4, 00000003h
-  mov eax, Me
-  mov ecx, [eax+00000040h]
-  push ecx
-  call [00401018h]
-  cmp eax, 00000008h
-  jnz 0045C314h
-  mov var_4, 00000004h
-  push 0043A37Ch ; "&H"
-  push 00000004h
-  mov edx, Me
-  mov eax, [edx+00000040h]
-  push eax
-  call [0040119Ch]
-  mov edx, eax
-  lea ecx, var_28
-  call [004011ACh]
-  push eax
-  call [00401044h]
-  mov edx, eax
-  lea ecx, var_2C
-  call [004011ACh]
-  push eax
-  call [004011D8h]
-  call [00401190h]
-  mov var_24, eax
-  lea ecx, var_2C
-  push ecx
-  lea edx, var_28
-  push edx
-  push 00000002h
-  call [00401150h]
-  add esp, 0000000Ch
-  fwait
-  push 0045C331h
-  jmp 0045C330h
-  lea eax, var_2C
-  push eax
-  lea ecx, var_28
-  push ecx
-  push 00000002h
-  call [00401150h]
-  add esp, 0000000Ch
-  ret
-  ret
-  mov edx, Me
-  mov eax, [edx]
-  mov ecx, Me
-  push ecx
-  call [eax+00000008h]
-  mov edx, arg_C
-  mov eax, var_24
-  mov [edx], eax
-  mov eax, var_10
-  mov ecx, var_20
-  mov fs:[00000000h], ecx
-  pop edi
-  pop esi
-  pop ebx
-  mov esp, ebp
-  pop ebp
-  retn 0008h
+Public Property Get Language() '45C240
+  loc_0045C246: ext_4010EC
+  loc_0045C25E: ext_40109C
+  loc_0045C29A: call var_8004 = global_00401070(FFFFFFFFh, Me, 0, 0, 0)
+  loc_0045C2AE: call var_8008 = global_00401018(global_64)
+  loc_0045C2B7: If var_8008 = 8 Then
+  loc_0045C2CE:   call var_800C = global_0040119C(global_64, 00000004h, "&H")
+  loc_0045C2D9:   call var_8010 = global_004011AC
+  loc_0045C2E0:   call var_8014 = global_00401044(var_8010)
+  loc_0045C2EB:   call var_8018 = global_004011AC
+  loc_0045C2F2:   call var_801C = global_004011D8(var_8018)
+  loc_0045C2F8:   call var_8020 = global_00401190
+  loc_0045C2FE:   var_24 = var_8020
+  loc_0045C30B:   call var_8024 = global_00401150(00000002h, var_28, var_2C)
+  loc_0045C314: End If
+  loc_0045C31A: GoTo loc_0045C330
+  loc_0045C326: call var_8028 = global_00401150(00000002h, var_28, var_2C, global_0045C331)
+  loc_0045C32F: Exit Sub
+  loc_0045C330: ' Referenced from: 0045C31A
 End Sub
 
-Public Property Get CodePage(arg_C) '45C360
-  push ebp
-  mov ebp, esp
-  sub esp, 00000018h
-  push 00403896h ; ext_4010EC
-  mov eax, fs:[00000000h]
-  push eax
-  mov fs:[00000000h], esp
-  mov eax, 00000020h
-  call 00403890h ; ext_40109C
-  push ebx
-  push esi
-  push edi
-  mov var_18, esp
-  mov var_14, 00403128h ; Chr(37)
-  mov var_10, 00000000h
-  mov var_C, 00000000h
-  mov eax, Me
-  mov ecx, [eax]
-  mov edx, Me
-  push edx
-  call [ecx+00000004h]
-  mov var_4, 00000001h
-  mov var_4, 00000002h
-  push FFFFFFFFh
-  call [00401070h]
-  mov var_4, 00000003h
-  mov eax, Me
-  mov ecx, [eax+00000040h]
-  push ecx
-  call [00401018h]
-  cmp eax, 00000008h
-  jnz 0045C434h
-  mov var_4, 00000004h
-  push 0043A37Ch ; "&H"
-  push 00000004h
-  mov edx, Me
-  mov eax, [edx+00000040h]
-  push eax
-  call [004011B0h]
-  mov edx, eax
-  lea ecx, var_28
-  call [004011ACh]
-  push eax
-  call [00401044h]
-  mov edx, eax
-  lea ecx, var_2C
-  call [004011ACh]
-  push eax
-  call [004011D8h]
-  call [00401190h]
-  mov var_24, eax
-  lea ecx, var_2C
-  push ecx
-  lea edx, var_28
-  push edx
-  push 00000002h
-  call [00401150h]
-  add esp, 0000000Ch
-  fwait
-  push 0045C451h
-  jmp 0045C450h
-  lea eax, var_2C
-  push eax
-  lea ecx, var_28
-  push ecx
-  push 00000002h
-  call [00401150h]
-  add esp, 0000000Ch
-  ret
-  ret
-  mov edx, Me
-  mov eax, [edx]
-  mov ecx, Me
-  push ecx
-  call [eax+00000008h]
-  mov edx, arg_C
-  mov eax, var_24
-  mov [edx], eax
-  mov eax, var_10
-  mov ecx, var_20
-  mov fs:[00000000h], ecx
-  pop edi
-  pop esi
-  pop ebx
-  mov esp, ebp
-  pop ebp
-  retn 0008h
+Public Property Get CodePage() '45C360
+  loc_0045C366: ext_4010EC
+  loc_0045C37E: ext_40109C
+  loc_0045C3BA: call var_8004 = global_00401070(FFFFFFFFh, Me, 0, 0, 0)
+  loc_0045C3CE: call var_8008 = global_00401018(global_64)
+  loc_0045C3D7: If var_8008 = 8 Then
+  loc_0045C3EE:   call var_800C = global_004011B0(global_64, 00000004h, "&H")
+  loc_0045C3F9:   call var_8010 = global_004011AC
+  loc_0045C400:   call var_8014 = global_00401044(var_8010)
+  loc_0045C40B:   call var_8018 = global_004011AC
+  loc_0045C412:   call var_801C = global_004011D8(var_8018)
+  loc_0045C418:   call var_8020 = global_00401190
+  loc_0045C41E:   var_24 = var_8020
+  loc_0045C42B:   call var_8024 = global_00401150(00000002h, var_28, var_2C)
+  loc_0045C434: End If
+  loc_0045C43A: GoTo loc_0045C450
+  loc_0045C446: call var_8028 = global_00401150(00000002h, var_28, var_2C, global_0045C451)
+  loc_0045C44F: Exit Sub
+  loc_0045C450: ' Referenced from: 0045C43A
 End Sub
 
-Public Property Get CompanyName(arg_C) '45C480
-  push ebp
-  mov ebp, esp
-  sub esp, 00000018h
-  push 00403896h ; ext_4010EC
-  mov eax, fs:[00000000h]
-  push eax
-  mov fs:[00000000h], esp
-  mov eax, 00000024h
-  call 00403890h ; ext_40109C
-  push ebx
-  push esi
-  push edi
-  mov var_18, esp
-  mov var_14, 00403160h ; "-"
-  mov var_10, 00000000h
-  mov var_C, 00000000h
-  mov eax, Me
-  mov ecx, [eax]
-  mov edx, Me
-  push edx
-  call [ecx+00000004h]
-  mov var_4, 00000001h
-  mov eax, arg_C
-  mov [eax], 00000000h
-  mov var_4, 00000002h
-  push FFFFFFFFh
-  call [00401070h]
-  mov var_4, 00000003h
-  mov edx, 0042C81Ch ; "CompanyName"
-  lea ecx, var_28
-  call [00401148h]
-  lea ecx, var_2C
-  push ecx
-  lea edx, var_28
-  push edx
-  mov eax, Me
-  mov ecx, [eax]
-  mov edx, Me
-  push edx
-  call [ecx+0000008Ch]
-  mov eax, var_2C
-  mov var_44, eax
-  mov var_2C, 00000000h
-  mov edx, var_44
-  lea ecx, var_24
-  call [004011ACh]
-  lea ecx, var_28
-  call [004011CCh]
-  push 0045C566h
-  jmp 0045C565h
-  mov ecx, var_10
-  and ecx, 00000004h
-  test ecx, ecx
-  jz 0045C551h
-  lea ecx, var_24
-  call [004011CCh]
-  lea edx, var_2C
-  push edx
-  lea eax, var_28
-  push eax
-  push 00000002h
-  call [00401150h]
-  add esp, 0000000Ch
-  ret
-  ret
-  mov ecx, Me
-  mov edx, [ecx]
-  mov eax, Me
-  push eax
-  call [edx+00000008h]
-  mov ecx, arg_C
-  mov edx, var_24
-  mov [ecx], edx
-  mov eax, var_10
-  mov ecx, var_20
-  mov fs:[00000000h], ecx
-  pop edi
-  pop esi
-  pop ebx
-  mov esp, ebp
-  pop ebp
-  retn 0008h
+Public Property Get CompanyName() '45C480
+  loc_0045C486: ext_4010EC
+  loc_0045C49E: ext_40109C
+  loc_0045C4E3: call var_8004 = global_00401070(FFFFFFFFh, Me, 0, 0, 0)
+  loc_0045C4F8: call var_8008 = global_00401148
+  loc_0045C50F: var_800C = VersionInfo.Proc_4_28_45DF50(var_28)
+  loc_0045C518: var_44 = var_2C
+  loc_0045C528: call var_8010 = global_004011AC(var_2C)
+  loc_0045C531: call var_8014 = global_004011CC
+  loc_0045C53C: GoTo loc_0045C565
+  loc_0045C546: If (0 And 4) Then
+  loc_0045C54B:   call var_8018 = global_004011CC(global_0045C566)
+  loc_0045C551: End If
+  loc_0045C55B: call var_801C = global_00401150(00000002h, var_28, var_2C)
+  loc_0045C564: Exit Sub
+  loc_0045C565: ' Referenced from: 0045C53C
 End Sub
 
-Public Property Get FileDescription(arg_C) '45C590
-  push ebp
-  mov ebp, esp
-  sub esp, 00000018h
-  push 00403896h ; ext_4010EC
-  mov eax, fs:[00000000h]
-  push eax
-  mov fs:[00000000h], esp
-  mov eax, 00000024h
-  call 00403890h ; ext_40109C
-  push ebx
-  push esi
-  push edi
-  mov var_18, esp
-  mov var_14, 00403190h ; "-"
-  mov var_10, 00000000h
-  mov var_C, 00000000h
-  mov eax, Me
-  mov ecx, [eax]
-  mov edx, Me
-  push edx
-  call [ecx+00000004h]
-  mov var_4, 00000001h
-  mov eax, arg_C
-  mov [eax], 00000000h
-  mov var_4, 00000002h
-  push FFFFFFFFh
-  call [00401070h]
-  mov var_4, 00000003h
-  mov edx, 0042C488h ; "FileDescription"
-  lea ecx, var_28
-  call [00401148h]
-  lea ecx, var_2C
-  push ecx
-  lea edx, var_28
-  push edx
-  mov eax, Me
-  mov ecx, [eax]
-  mov edx, Me
-  push edx
-  call [ecx+0000008Ch]
-  mov eax, var_2C
-  mov var_44, eax
-  mov var_2C, 00000000h
-  mov edx, var_44
-  lea ecx, var_24
-  call [004011ACh]
-  lea ecx, var_28
-  call [004011CCh]
-  push 0045C676h
-  jmp 0045C675h
-  mov ecx, var_10
-  and ecx, 00000004h
-  test ecx, ecx
-  jz 0045C661h
-  lea ecx, var_24
-  call [004011CCh]
-  lea edx, var_2C
-  push edx
-  lea eax, var_28
-  push eax
-  push 00000002h
-  call [00401150h]
-  add esp, 0000000Ch
-  ret
-  ret
-  mov ecx, Me
-  mov edx, [ecx]
-  mov eax, Me
-  push eax
-  call [edx+00000008h]
-  mov ecx, arg_C
-  mov edx, var_24
-  mov [ecx], edx
-  mov eax, var_10
-  mov ecx, var_20
-  mov fs:[00000000h], ecx
-  pop edi
-  pop esi
-  pop ebx
-  mov esp, ebp
-  pop ebp
-  retn 0008h
+Public Property Get FileDescription() '45C590
+  loc_0045C596: ext_4010EC
+  loc_0045C5AE: ext_40109C
+  loc_0045C5F3: call var_8004 = global_00401070(FFFFFFFFh, Me, 0, 0, 0)
+  loc_0045C608: call var_8008 = global_00401148
+  loc_0045C61F: var_800C = VersionInfo.Proc_4_28_45DF50(var_28)
+  loc_0045C628: var_44 = var_2C
+  loc_0045C638: call var_8010 = global_004011AC(var_2C)
+  loc_0045C641: call var_8014 = global_004011CC
+  loc_0045C64C: GoTo loc_0045C675
+  loc_0045C656: If (0 And 4) Then
+  loc_0045C65B:   call var_8018 = global_004011CC(global_0045C676)
+  loc_0045C661: End If
+  loc_0045C66B: call var_801C = global_00401150(00000002h, var_28, var_2C)
+  loc_0045C674: Exit Sub
+  loc_0045C675: ' Referenced from: 0045C64C
 End Sub
 
-Public Property Get FileVersion(arg_C) '45C6A0
-  push ebp
-  mov ebp, esp
-  sub esp, 00000018h
-  push 00403896h ; ext_4010EC
-  mov eax, fs:[00000000h]
-  push eax
-  mov fs:[00000000h], esp
-  mov eax, 00000024h
-  call 00403890h ; ext_40109C
-  push ebx
-  push esi
-  push edi
-  mov var_18, esp
-  mov var_14, 004031C0h ; "-"
-  mov var_10, 00000000h
-  mov var_C, 00000000h
-  mov eax, Me
-  mov ecx, [eax]
-  mov edx, Me
-  push edx
-  call [ecx+00000004h]
-  mov var_4, 00000001h
-  mov eax, arg_C
-  mov [eax], 00000000h
-  mov var_4, 00000002h
-  push FFFFFFFFh
-  call [00401070h]
-  mov var_4, 00000003h
-  mov edx, 0042C0FCh ; "FileVersion"
-  lea ecx, var_28
-  call [00401148h]
-  lea ecx, var_2C
-  push ecx
-  lea edx, var_28
-  push edx
-  mov eax, Me
-  mov ecx, [eax]
-  mov edx, Me
-  push edx
-  call [ecx+0000008Ch]
-  mov eax, var_2C
-  mov var_44, eax
-  mov var_2C, 00000000h
-  mov edx, var_44
-  lea ecx, var_24
-  call [004011ACh]
-  lea ecx, var_28
-  call [004011CCh]
-  push 0045C786h
-  jmp 0045C785h
-  mov ecx, var_10
-  and ecx, 00000004h
-  test ecx, ecx
-  jz 0045C771h
-  lea ecx, var_24
-  call [004011CCh]
-  lea edx, var_2C
-  push edx
-  lea eax, var_28
-  push eax
-  push 00000002h
-  call [00401150h]
-  add esp, 0000000Ch
-  ret
-  ret
-  mov ecx, Me
-  mov edx, [ecx]
-  mov eax, Me
-  push eax
-  call [edx+00000008h]
-  mov ecx, arg_C
-  mov edx, var_24
-  mov [ecx], edx
-  mov eax, var_10
-  mov ecx, var_20
-  mov fs:[00000000h], ecx
-  pop edi
-  pop esi
-  pop ebx
-  mov esp, ebp
-  pop ebp
-  retn 0008h
+Public Property Get FileVersion() '45C6A0
+  loc_0045C6A6: ext_4010EC
+  loc_0045C6BE: ext_40109C
+  loc_0045C703: call var_8004 = global_00401070(FFFFFFFFh, Me, 0, 0, 0)
+  loc_0045C718: call var_8008 = global_00401148
+  loc_0045C72F: var_800C = VersionInfo.Proc_4_28_45DF50(var_28)
+  loc_0045C738: var_44 = var_2C
+  loc_0045C748: call var_8010 = global_004011AC(var_2C)
+  loc_0045C751: call var_8014 = global_004011CC
+  loc_0045C75C: GoTo loc_0045C785
+  loc_0045C766: If (0 And 4) Then
+  loc_0045C76B:   call var_8018 = global_004011CC(global_0045C786)
+  loc_0045C771: End If
+  loc_0045C77B: call var_801C = global_00401150(00000002h, var_28, var_2C)
+  loc_0045C784: Exit Sub
+  loc_0045C785: ' Referenced from: 0045C75C
 End Sub
 
-Public Property Get InternalName(arg_C) '45C7B0
-  push ebp
-  mov ebp, esp
-  sub esp, 00000018h
-  push 00403896h ; ext_4010EC
-  mov eax, fs:[00000000h]
-  push eax
-  mov fs:[00000000h], esp
-  mov eax, 00000024h
-  call 00403890h ; ext_40109C
-  push ebx
-  push esi
-  push edi
-  mov var_18, esp
-  mov var_14, 004031F0h ; "-"
-  mov var_10, 00000000h
-  mov var_C, 00000000h
-  mov eax, Me
-  mov ecx, [eax]
-  mov edx, Me
-  push edx
-  call [ecx+00000004h]
-  mov var_4, 00000001h
-  mov eax, arg_C
-  mov [eax], 00000000h
-  mov var_4, 00000002h
-  push FFFFFFFFh
-  call [00401070h]
-  mov var_4, 00000003h
-  mov edx, 0042BD2Ch ; "InternalName"
-  lea ecx, var_28
-  call [00401148h]
-  lea ecx, var_2C
-  push ecx
-  lea edx, var_28
-  push edx
-  mov eax, Me
-  mov ecx, [eax]
-  mov edx, Me
-  push edx
-  call [ecx+0000008Ch]
-  mov eax, var_2C
-  mov var_44, eax
-  mov var_2C, 00000000h
-  mov edx, var_44
-  lea ecx, var_24
-  call [004011ACh]
-  lea ecx, var_28
-  call [004011CCh]
-  push 0045C896h
-  jmp 0045C895h
-  mov ecx, var_10
-  and ecx, 00000004h
-  test ecx, ecx
-  jz 0045C881h
-  lea ecx, var_24
-  call [004011CCh]
-  lea edx, var_2C
-  push edx
-  lea eax, var_28
-  push eax
-  push 00000002h
-  call [00401150h]
-  add esp, 0000000Ch
-  ret
-  ret
-  mov ecx, Me
-  mov edx, [ecx]
-  mov eax, Me
-  push eax
-  call [edx+00000008h]
-  mov ecx, arg_C
-  mov edx, var_24
-  mov [ecx], edx
-  mov eax, var_10
-  mov ecx, var_20
-  mov fs:[00000000h], ecx
-  pop edi
-  pop esi
-  pop ebx
-  mov esp, ebp
-  pop ebp
-  retn 0008h
+Public Property Get InternalName() '45C7B0
+  loc_0045C7B6: ext_4010EC
+  loc_0045C7CE: ext_40109C
+  loc_0045C813: call var_8004 = global_00401070(FFFFFFFFh, Me, 0, 0, 0)
+  loc_0045C828: call var_8008 = global_00401148
+  loc_0045C83F: var_800C = VersionInfo.Proc_4_28_45DF50(var_28)
+  loc_0045C848: var_44 = var_2C
+  loc_0045C858: call var_8010 = global_004011AC(var_2C)
+  loc_0045C861: call var_8014 = global_004011CC
+  loc_0045C86C: GoTo loc_0045C895
+  loc_0045C876: If (0 And 4) Then
+  loc_0045C87B:   call var_8018 = global_004011CC(global_0045C896)
+  loc_0045C881: End If
+  loc_0045C88B: call var_801C = global_00401150(00000002h, var_28, var_2C)
+  loc_0045C894: Exit Sub
+  loc_0045C895: ' Referenced from: 0045C86C
 End Sub
 
-Public Property Get LegalCopyright(arg_C) '45C8C0
-  push ebp
-  mov ebp, esp
-  sub esp, 00000018h
-  push 00403896h ; ext_4010EC
-  mov eax, fs:[00000000h]
-  push eax
-  mov fs:[00000000h], esp
-  mov eax, 00000024h
-  call 00403890h ; ext_40109C
-  push ebx
-  push esi
-  push edi
-  mov var_18, esp
-  mov var_14, 00403220h ; "-"
-  mov var_10, 00000000h
-  mov var_C, 00000000h
-  mov eax, Me
-  mov ecx, [eax]
-  mov edx, Me
-  push edx
-  call [ecx+00000004h]
-  mov var_4, 00000001h
-  mov eax, arg_C
-  mov [eax], 00000000h
-  mov var_4, 00000002h
-  push FFFFFFFFh
-  call [00401070h]
-  mov var_4, 00000003h
-  mov edx, 0042B3C4h ; "LegalCopyright"
-  lea ecx, var_28
-  call [00401148h]
-  lea ecx, var_2C
-  push ecx
-  lea edx, var_28
-  push edx
-  mov eax, Me
-  mov ecx, [eax]
-  mov edx, Me
-  push edx
-  call [ecx+0000008Ch]
-  mov eax, var_2C
-  mov var_44, eax
-  mov var_2C, 00000000h
-  mov edx, var_44
-  lea ecx, var_24
-  call [004011ACh]
-  lea ecx, var_28
-  call [004011CCh]
-  push 0045C9A6h
-  jmp 0045C9A5h
-  mov ecx, var_10
-  and ecx, 00000004h
-  test ecx, ecx
-  jz 0045C991h
-  lea ecx, var_24
-  call [004011CCh]
-  lea edx, var_2C
-  push edx
-  lea eax, var_28
-  push eax
-  push 00000002h
-  call [00401150h]
-  add esp, 0000000Ch
-  ret
-  ret
-  mov ecx, Me
-  mov edx, [ecx]
-  mov eax, Me
-  push eax
-  call [edx+00000008h]
-  mov ecx, arg_C
-  mov edx, var_24
-  mov [ecx], edx
-  mov eax, var_10
-  mov ecx, var_20
-  mov fs:[00000000h], ecx
-  pop edi
-  pop esi
-  pop ebx
-  mov esp, ebp
-  pop ebp
-  retn 0008h
+Public Property Get LegalCopyright() '45C8C0
+  loc_0045C8C6: ext_4010EC
+  loc_0045C8DE: ext_40109C
+  loc_0045C923: call var_8004 = global_00401070(FFFFFFFFh, Me, 0, 0, 0)
+  loc_0045C938: call var_8008 = global_00401148
+  loc_0045C94F: var_800C = VersionInfo.Proc_4_28_45DF50(var_28)
+  loc_0045C958: var_44 = var_2C
+  loc_0045C968: call var_8010 = global_004011AC(var_2C)
+  loc_0045C971: call var_8014 = global_004011CC
+  loc_0045C97C: GoTo loc_0045C9A5
+  loc_0045C986: If (0 And 4) Then
+  loc_0045C98B:   call var_8018 = global_004011CC(global_0045C9A6)
+  loc_0045C991: End If
+  loc_0045C99B: call var_801C = global_00401150(00000002h, var_28, var_2C)
+  loc_0045C9A4: Exit Sub
+  loc_0045C9A5: ' Referenced from: 0045C97C
 End Sub
 
-Public Property Get OriginalFileName(arg_C) '45C9D0
-  push ebp
-  mov ebp, esp
-  sub esp, 00000018h
-  push 00403896h ; ext_4010EC
-  mov eax, fs:[00000000h]
-  push eax
-  mov fs:[00000000h], esp
-  mov eax, 00000024h
-  call 00403890h ; ext_40109C
-  push ebx
-  push esi
-  push edi
-  mov var_18, esp
-  mov var_14, 00403250h ; "-"
-  mov var_10, 00000000h
-  mov var_C, 00000000h
-  mov eax, Me
-  mov ecx, [eax]
-  mov edx, Me
-  push edx
-  call [ecx+00000004h]
-  mov var_4, 00000001h
-  mov eax, arg_C
-  mov [eax], 00000000h
-  mov var_4, 00000002h
-  push FFFFFFFFh
-  call [00401070h]
-  mov var_4, 00000003h
-  mov edx, 0042AC48h ; "OriginalFileName"
-  lea ecx, var_28
-  call [00401148h]
-  lea ecx, var_2C
-  push ecx
-  lea edx, var_28
-  push edx
-  mov eax, Me
-  mov ecx, [eax]
-  mov edx, Me
-  push edx
-  call [ecx+0000008Ch]
-  mov eax, var_2C
-  mov var_44, eax
-  mov var_2C, 00000000h
-  mov edx, var_44
-  lea ecx, var_24
-  call [004011ACh]
-  lea ecx, var_28
-  call [004011CCh]
-  push 0045CAB6h
-  jmp 0045CAB5h
-  mov ecx, var_10
-  and ecx, 00000004h
-  test ecx, ecx
-  jz 0045CAA1h
-  lea ecx, var_24
-  call [004011CCh]
-  lea edx, var_2C
-  push edx
-  lea eax, var_28
-  push eax
-  push 00000002h
-  call [00401150h]
-  add esp, 0000000Ch
-  ret
-  ret
-  mov ecx, Me
-  mov edx, [ecx]
-  mov eax, Me
-  push eax
-  call [edx+00000008h]
-  mov ecx, arg_C
-  mov edx, var_24
-  mov [ecx], edx
-  mov eax, var_10
-  mov ecx, var_20
-  mov fs:[00000000h], ecx
-  pop edi
-  pop esi
-  pop ebx
-  mov esp, ebp
-  pop ebp
-  retn 0008h
+Public Property Get OriginalFileName() '45C9D0
+  loc_0045C9D6: ext_4010EC
+  loc_0045C9EE: ext_40109C
+  loc_0045CA33: call var_8004 = global_00401070(FFFFFFFFh, Me, 0, 0, 0)
+  loc_0045CA48: call var_8008 = global_00401148
+  loc_0045CA5F: var_800C = VersionInfo.Proc_4_28_45DF50(var_28)
+  loc_0045CA68: var_44 = var_2C
+  loc_0045CA78: call var_8010 = global_004011AC(var_2C)
+  loc_0045CA81: call var_8014 = global_004011CC
+  loc_0045CA8C: GoTo loc_0045CAB5
+  loc_0045CA96: If (0 And 4) Then
+  loc_0045CA9B:   call var_8018 = global_004011CC(global_0045CAB6)
+  loc_0045CAA1: End If
+  loc_0045CAAB: call var_801C = global_00401150(00000002h, var_28, var_2C)
+  loc_0045CAB4: Exit Sub
+  loc_0045CAB5: ' Referenced from: 0045CA8C
 End Sub
 
-Public Property Get ProductName(arg_C) '45CAE0
-  push ebp
-  mov ebp, esp
-  sub esp, 00000018h
-  push 00403896h ; ext_4010EC
-  mov eax, fs:[00000000h]
-  push eax
-  mov fs:[00000000h], esp
-  mov eax, 00000024h
-  call 00403890h ; ext_40109C
-  push ebx
-  push esi
-  push edi
-  mov var_18, esp
-  mov var_14, 00403280h ; "-"
-  mov var_10, 00000000h
-  mov var_C, 00000000h
-  mov eax, Me
-  mov ecx, [eax]
-  mov edx, Me
-  push edx
-  call [ecx+00000004h]
-  mov var_4, 00000001h
-  mov eax, arg_C
-  mov [eax], 00000000h
-  mov var_4, 00000002h
-  push FFFFFFFFh
-  call [00401070h]
-  mov var_4, 00000003h
-  mov edx, 00429468h ; "ProductName"
-  lea ecx, var_28
-  call [00401148h]
-  lea ecx, var_2C
-  push ecx
-  lea edx, var_28
-  push edx
-  mov eax, Me
-  mov ecx, [eax]
-  mov edx, Me
-  push edx
-  call [ecx+0000008Ch]
-  mov eax, var_2C
-  mov var_44, eax
-  mov var_2C, 00000000h
-  mov edx, var_44
-  lea ecx, var_24
-  call [004011ACh]
-  lea ecx, var_28
-  call [004011CCh]
-  push 0045CBC6h
-  jmp 0045CBC5h
-  mov ecx, var_10
-  and ecx, 00000004h
-  test ecx, ecx
-  jz 0045CBB1h
-  lea ecx, var_24
-  call [004011CCh]
-  lea edx, var_2C
-  push edx
-  lea eax, var_28
-  push eax
-  push 00000002h
-  call [00401150h]
-  add esp, 0000000Ch
-  ret
-  ret
-  mov ecx, Me
-  mov edx, [ecx]
-  mov eax, Me
-  push eax
-  call [edx+00000008h]
-  mov ecx, arg_C
-  mov edx, var_24
-  mov [ecx], edx
-  mov eax, var_10
-  mov ecx, var_20
-  mov fs:[00000000h], ecx
-  pop edi
-  pop esi
-  pop ebx
-  mov esp, ebp
-  pop ebp
-  retn 0008h
+Public Property Get ProductName() '45CAE0
+  loc_0045CAE6: ext_4010EC
+  loc_0045CAFE: ext_40109C
+  loc_0045CB43: call var_8004 = global_00401070(FFFFFFFFh, Me, 0, 0, 0)
+  loc_0045CB58: call var_8008 = global_00401148
+  loc_0045CB6F: var_800C = VersionInfo.Proc_4_28_45DF50(var_28)
+  loc_0045CB78: var_44 = var_2C
+  loc_0045CB88: call var_8010 = global_004011AC(var_2C)
+  loc_0045CB91: call var_8014 = global_004011CC
+  loc_0045CB9C: GoTo loc_0045CBC5
+  loc_0045CBA6: If (0 And 4) Then
+  loc_0045CBAB:   call var_8018 = global_004011CC(global_0045CBC6)
+  loc_0045CBB1: End If
+  loc_0045CBBB: call var_801C = global_00401150(00000002h, var_28, var_2C)
+  loc_0045CBC4: Exit Sub
+  loc_0045CBC5: ' Referenced from: 0045CB9C
 End Sub
 
-Public Property Get ProductVersion(arg_C) '45CBF0
-  push ebp
-  mov ebp, esp
-  sub esp, 00000018h
-  push 00403896h ; ext_4010EC
-  mov eax, fs:[00000000h]
-  push eax
-  mov fs:[00000000h], esp
-  mov eax, 00000024h
-  call 00403890h ; ext_40109C
-  push ebx
-  push esi
-  push edi
-  mov var_18, esp
-  mov var_14, 004032B0h ; "-"
-  mov var_10, 00000000h
-  mov var_C, 00000000h
-  mov eax, Me
-  mov ecx, [eax]
-  mov edx, Me
-  push edx
-  call [ecx+00000004h]
-  mov var_4, 00000001h
-  mov eax, arg_C
-  mov [eax], 00000000h
-  mov var_4, 00000002h
-  push FFFFFFFFh
-  call [00401070h]
-  mov var_4, 00000003h
-  mov edx, 00428EC8h ; "ProductVersion"
-  lea ecx, var_28
-  call [00401148h]
-  lea ecx, var_2C
-  push ecx
-  lea edx, var_28
-  push edx
-  mov eax, Me
-  mov ecx, [eax]
-  mov edx, Me
-  push edx
-  call [ecx+0000008Ch]
-  mov eax, var_2C
-  mov var_44, eax
-  mov var_2C, 00000000h
-  mov edx, var_44
-  lea ecx, var_24
-  call [004011ACh]
-  lea ecx, var_28
-  call [004011CCh]
-  push 0045CCD6h
-  jmp 0045CCD5h
-  mov ecx, var_10
-  and ecx, 00000004h
-  test ecx, ecx
-  jz 0045CCC1h
-  lea ecx, var_24
-  call [004011CCh]
-  lea edx, var_2C
-  push edx
-  lea eax, var_28
-  push eax
-  push 00000002h
-  call [00401150h]
-  add esp, 0000000Ch
-  ret
-  ret
-  mov ecx, Me
-  mov edx, [ecx]
-  mov eax, Me
-  push eax
-  call [edx+00000008h]
-  mov ecx, arg_C
-  mov edx, var_24
-  mov [ecx], edx
-  mov eax, var_10
-  mov ecx, var_20
-  mov fs:[00000000h], ecx
-  pop edi
-  pop esi
-  pop ebx
-  mov esp, ebp
-  pop ebp
-  retn 0008h
+Public Property Get ProductVersion() '45CBF0
+  loc_0045CBF6: ext_4010EC
+  loc_0045CC0E: ext_40109C
+  loc_0045CC53: call var_8004 = global_00401070(FFFFFFFFh, Me, 0, 0, 0)
+  loc_0045CC68: call var_8008 = global_00401148
+  loc_0045CC7F: var_800C = VersionInfo.Proc_4_28_45DF50(var_28)
+  loc_0045CC88: var_44 = var_2C
+  loc_0045CC98: call var_8010 = global_004011AC(var_2C)
+  loc_0045CCA1: call var_8014 = global_004011CC
+  loc_0045CCAC: GoTo loc_0045CCD5
+  loc_0045CCB6: If (0 And 4) Then
+  loc_0045CCBB:   call var_8018 = global_004011CC(global_0045CCD6)
+  loc_0045CCC1: End If
+  loc_0045CCCB: call var_801C = global_00401150(00000002h, var_28, var_2C)
+  loc_0045CCD4: Exit Sub
+  loc_0045CCD5: ' Referenced from: 0045CCAC
 End Sub
 
-Public Property Get LegalTrademarks(arg_C) '45CD00
-  push ebp
-  mov ebp, esp
-  sub esp, 00000018h
-  push 00403896h ; ext_4010EC
-  mov eax, fs:[00000000h]
-  push eax
-  mov fs:[00000000h], esp
-  mov eax, 00000024h
-  call 00403890h ; ext_40109C
-  push ebx
-  push esi
-  push edi
-  mov var_18, esp
-  mov var_14, 004032E0h ; "-"
-  mov var_10, 00000000h
-  mov var_C, 00000000h
-  mov eax, Me
-  mov ecx, [eax]
-  mov edx, Me
-  push edx
-  call [ecx+00000004h]
-  mov var_4, 00000001h
-  mov eax, arg_C
-  mov [eax], 00000000h
-  mov var_4, 00000002h
-  push FFFFFFFFh
-  call [00401070h]
-  mov var_4, 00000003h
-  mov edx, 00428CE8h ; "LegalTrademarks"
-  lea ecx, var_28
-  call [00401148h]
-  lea ecx, var_2C
-  push ecx
-  lea edx, var_28
-  push edx
-  mov eax, Me
-  mov ecx, [eax]
-  mov edx, Me
-  push edx
-  call [ecx+0000008Ch]
-  mov eax, var_2C
-  mov var_44, eax
-  mov var_2C, 00000000h
-  mov edx, var_44
-  lea ecx, var_24
-  call [004011ACh]
-  lea ecx, var_28
-  call [004011CCh]
-  push 0045CDE6h
-  jmp 0045CDE5h
-  mov ecx, var_10
-  and ecx, 00000004h
-  test ecx, ecx
-  jz 0045CDD1h
-  lea ecx, var_24
-  call [004011CCh]
-  lea edx, var_2C
-  push edx
-  lea eax, var_28
-  push eax
-  push 00000002h
-  call [00401150h]
-  add esp, 0000000Ch
-  ret
-  ret
-  mov ecx, Me
-  mov edx, [ecx]
-  mov eax, Me
-  push eax
-  call [edx+00000008h]
-  mov ecx, arg_C
-  mov edx, var_24
-  mov [ecx], edx
-  mov eax, var_10
-  mov ecx, var_20
-  mov fs:[00000000h], ecx
-  pop edi
-  pop esi
-  pop ebx
-  mov esp, ebp
-  pop ebp
-  retn 0008h
+Public Property Get LegalTrademarks() '45CD00
+  loc_0045CD06: ext_4010EC
+  loc_0045CD1E: ext_40109C
+  loc_0045CD63: call var_8004 = global_00401070(FFFFFFFFh, Me, 0, 0, 0)
+  loc_0045CD78: call var_8008 = global_00401148
+  loc_0045CD8F: var_800C = VersionInfo.Proc_4_28_45DF50(var_28)
+  loc_0045CD98: var_44 = var_2C
+  loc_0045CDA8: call var_8010 = global_004011AC(var_2C)
+  loc_0045CDB1: call var_8014 = global_004011CC
+  loc_0045CDBC: GoTo loc_0045CDE5
+  loc_0045CDC6: If (0 And 4) Then
+  loc_0045CDCB:   call var_8018 = global_004011CC(global_0045CDE6)
+  loc_0045CDD1: End If
+  loc_0045CDDB: call var_801C = global_00401150(00000002h, var_28, var_2C)
+  loc_0045CDE4: Exit Sub
+  loc_0045CDE5: ' Referenced from: 0045CDBC
 End Sub
 
-Public Property Get LegalTrademarks1(arg_C) '45CE10
-  push ebp
-  mov ebp, esp
-  sub esp, 00000018h
-  push 00403896h ; ext_4010EC
-  mov eax, fs:[00000000h]
-  push eax
-  mov fs:[00000000h], esp
-  mov eax, 00000024h
-  call 00403890h ; ext_40109C
-  push ebx
-  push esi
-  push edi
-  mov var_18, esp
-  mov var_14, 00403310h ; "-"
-  mov var_10, 00000000h
-  mov var_C, 00000000h
-  mov eax, Me
-  mov ecx, [eax]
-  mov edx, Me
-  push edx
-  call [ecx+00000004h]
-  mov var_4, 00000001h
-  mov eax, arg_C
-  mov [eax], 00000000h
-  mov var_4, 00000002h
-  push FFFFFFFFh
-  call [00401070h]
-  mov var_4, 00000003h
-  mov edx, 00427FC0h ; "LegalTrademarks1"
-  lea ecx, var_28
-  call [00401148h]
-  lea ecx, var_2C
-  push ecx
-  lea edx, var_28
-  push edx
-  mov eax, Me
-  mov ecx, [eax]
-  mov edx, Me
-  push edx
-  call [ecx+0000008Ch]
-  mov eax, var_2C
-  mov var_44, eax
-  mov var_2C, 00000000h
-  mov edx, var_44
-  lea ecx, var_24
-  call [004011ACh]
-  lea ecx, var_28
-  call [004011CCh]
-  push 0045CEF6h
-  jmp 0045CEF5h
-  mov ecx, var_10
-  and ecx, 00000004h
-  test ecx, ecx
-  jz 0045CEE1h
-  lea ecx, var_24
-  call [004011CCh]
-  lea edx, var_2C
-  push edx
-  lea eax, var_28
-  push eax
-  push 00000002h
-  call [00401150h]
-  add esp, 0000000Ch
-  ret
-  ret
-  mov ecx, Me
-  mov edx, [ecx]
-  mov eax, Me
-  push eax
-  call [edx+00000008h]
-  mov ecx, arg_C
-  mov edx, var_24
-  mov [ecx], edx
-  mov eax, var_10
-  mov ecx, var_20
-  mov fs:[00000000h], ecx
-  pop edi
-  pop esi
-  pop ebx
-  mov esp, ebp
-  pop ebp
-  retn 0008h
+Public Property Get LegalTrademarks1() '45CE10
+  loc_0045CE16: ext_4010EC
+  loc_0045CE2E: ext_40109C
+  loc_0045CE73: call var_8004 = global_00401070(FFFFFFFFh, Me, 0, 0, 0)
+  loc_0045CE88: call var_8008 = global_00401148
+  loc_0045CE9F: var_800C = VersionInfo.Proc_4_28_45DF50(var_28)
+  loc_0045CEA8: var_44 = var_2C
+  loc_0045CEB8: call var_8010 = global_004011AC(var_2C)
+  loc_0045CEC1: call var_8014 = global_004011CC
+  loc_0045CECC: GoTo loc_0045CEF5
+  loc_0045CED6: If (0 And 4) Then
+  loc_0045CEDB:   call var_8018 = global_004011CC(global_0045CEF6)
+  loc_0045CEE1: End If
+  loc_0045CEEB: call var_801C = global_00401150(00000002h, var_28, var_2C)
+  loc_0045CEF4: Exit Sub
+  loc_0045CEF5: ' Referenced from: 0045CECC
 End Sub
 
-Public Property Get LegalTrademarks2(arg_C) '45CF20
-  push ebp
-  mov ebp, esp
-  sub esp, 00000018h
-  push 00403896h ; ext_4010EC
-  mov eax, fs:[00000000h]
-  push eax
-  mov fs:[00000000h], esp
-  mov eax, 00000024h
-  call 00403890h ; ext_40109C
-  push ebx
-  push esi
-  push edi
-  mov var_18, esp
-  mov var_14, 00403340h ; "-"
-  mov var_10, 00000000h
-  mov var_C, 00000000h
-  mov eax, Me
-  mov ecx, [eax]
-  mov edx, Me
-  push edx
-  call [ecx+00000004h]
-  mov var_4, 00000001h
-  mov eax, arg_C
-  mov [eax], 00000000h
-  mov var_4, 00000002h
-  push FFFFFFFFh
-  call [00401070h]
-  mov var_4, 00000003h
-  mov edx, 00427DE8h ; "LegalTrademarks2"
-  lea ecx, var_28
-  call [00401148h]
-  lea ecx, var_2C
-  push ecx
-  lea edx, var_28
-  push edx
-  mov eax, Me
-  mov ecx, [eax]
-  mov edx, Me
-  push edx
-  call [ecx+0000008Ch]
-  mov eax, var_2C
-  mov var_44, eax
-  mov var_2C, 00000000h
-  mov edx, var_44
-  lea ecx, var_24
-  call [004011ACh]
-  lea ecx, var_28
-  call [004011CCh]
-  push 0045D006h
-  jmp 0045D005h
-  mov ecx, var_10
-  and ecx, 00000004h
-  test ecx, ecx
-  jz 0045CFF1h
-  lea ecx, var_24
-  call [004011CCh]
-  lea edx, var_2C
-  push edx
-  lea eax, var_28
-  push eax
-  push 00000002h
-  call [00401150h]
-  add esp, 0000000Ch
-  ret
-  ret
-  mov ecx, Me
-  mov edx, [ecx]
-  mov eax, Me
-  push eax
-  call [edx+00000008h]
-  mov ecx, arg_C
-  mov edx, var_24
-  mov [ecx], edx
-  mov eax, var_10
-  mov ecx, var_20
-  mov fs:[00000000h], ecx
-  pop edi
-  pop esi
-  pop ebx
-  mov esp, ebp
-  pop ebp
-  retn 0008h
+Public Property Get LegalTrademarks2() '45CF20
+  loc_0045CF26: ext_4010EC
+  loc_0045CF3E: ext_40109C
+  loc_0045CF83: call var_8004 = global_00401070(FFFFFFFFh, Me, 0, 0, 0)
+  loc_0045CF98: call var_8008 = global_00401148
+  loc_0045CFAF: var_800C = VersionInfo.Proc_4_28_45DF50(var_28)
+  loc_0045CFB8: var_44 = var_2C
+  loc_0045CFC8: call var_8010 = global_004011AC(var_2C)
+  loc_0045CFD1: call var_8014 = global_004011CC
+  loc_0045CFDC: GoTo loc_0045D005
+  loc_0045CFE6: If (0 And 4) Then
+  loc_0045CFEB:   call var_8018 = global_004011CC(global_0045D006)
+  loc_0045CFF1: End If
+  loc_0045CFFB: call var_801C = global_00401150(00000002h, var_28, var_2C)
+  loc_0045D004: Exit Sub
+  loc_0045D005: ' Referenced from: 0045CFDC
 End Sub
 
-Public Property Get Comments(arg_C) '45D030
-  push ebp
-  mov ebp, esp
-  sub esp, 00000018h
-  push 00403896h ; ext_4010EC
-  mov eax, fs:[00000000h]
-  push eax
-  mov fs:[00000000h], esp
-  mov eax, 00000024h
-  call 00403890h ; ext_40109C
-  push ebx
-  push esi
-  push edi
-  mov var_18, esp
-  mov var_14, 00403370h ; "-"
-  mov var_10, 00000000h
-  mov var_C, 00000000h
-  mov eax, Me
-  mov ecx, [eax]
-  mov edx, Me
-  push edx
-  call [ecx+00000004h]
-  mov var_4, 00000001h
-  mov eax, arg_C
-  mov [eax], 00000000h
-  mov var_4, 00000002h
-  push FFFFFFFFh
-  call [00401070h]
-  mov var_4, 00000003h
-  mov edx, 00429290h ; "Comments"
-  lea ecx, var_28
-  call [00401148h]
-  lea ecx, var_2C
-  push ecx
-  lea edx, var_28
-  push edx
-  mov eax, Me
-  mov ecx, [eax]
-  mov edx, Me
-  push edx
-  call [ecx+0000008Ch]
-  mov eax, var_2C
-  mov var_44, eax
-  mov var_2C, 00000000h
-  mov edx, var_44
-  lea ecx, var_24
-  call [004011ACh]
-  lea ecx, var_28
-  call [004011CCh]
-  push 0045D116h
-  jmp 0045D115h
-  mov ecx, var_10
-  and ecx, 00000004h
-  test ecx, ecx
-  jz 0045D101h
-  lea ecx, var_24
-  call [004011CCh]
-  lea edx, var_2C
-  push edx
-  lea eax, var_28
-  push eax
-  push 00000002h
-  call [00401150h]
-  add esp, 0000000Ch
-  ret
-  ret
-  mov ecx, Me
-  mov edx, [ecx]
-  mov eax, Me
-  push eax
-  call [edx+00000008h]
-  mov ecx, arg_C
-  mov edx, var_24
-  mov [ecx], edx
-  mov eax, var_10
-  mov ecx, var_20
-  mov fs:[00000000h], ecx
-  pop edi
-  pop esi
-  pop ebx
-  mov esp, ebp
-  pop ebp
-  retn 0008h
+Public Property Get Comments() '45D030
+  loc_0045D036: ext_4010EC
+  loc_0045D04E: ext_40109C
+  loc_0045D093: call var_8004 = global_00401070(FFFFFFFFh, Me, 0, 0, 0)
+  loc_0045D0A8: call var_8008 = global_00401148
+  loc_0045D0BF: var_800C = VersionInfo.Proc_4_28_45DF50(var_28)
+  loc_0045D0C8: var_44 = var_2C
+  loc_0045D0D8: call var_8010 = global_004011AC(var_2C)
+  loc_0045D0E1: call var_8014 = global_004011CC
+  loc_0045D0EC: GoTo loc_0045D115
+  loc_0045D0F6: If (0 And 4) Then
+  loc_0045D0FB:   call var_8018 = global_004011CC(global_0045D116)
+  loc_0045D101: End If
+  loc_0045D10B: call var_801C = global_00401150(00000002h, var_28, var_2C)
+  loc_0045D114: Exit Sub
+  loc_0045D115: ' Referenced from: 0045D0EC
 End Sub
 
-Public Property Get PrivateBuild(arg_C) '45D140
-  push ebp
-  mov ebp, esp
-  sub esp, 00000018h
-  push 00403896h ; ext_4010EC
-  mov eax, fs:[00000000h]
-  push eax
-  mov fs:[00000000h], esp
-  mov eax, 00000024h
-  call 00403890h ; ext_40109C
-  push ebx
-  push esi
-  push edi
-  mov var_18, esp
-  mov var_14, 004033A0h ; "-"
-  mov var_10, 00000000h
-  mov var_C, 00000000h
-  mov eax, Me
-  mov ecx, [eax]
-  mov edx, Me
-  push edx
-  call [ecx+00000004h]
-  mov var_4, 00000001h
-  mov eax, arg_C
-  mov [eax], 00000000h
-  mov var_4, 00000002h
-  push FFFFFFFFh
-  call [00401070h]
-  mov var_4, 00000003h
-  mov edx, 00428380h ; "PrivateBuild"
-  lea ecx, var_28
-  call [00401148h]
-  lea ecx, var_2C
-  push ecx
-  lea edx, var_28
-  push edx
-  mov eax, Me
-  mov ecx, [eax]
-  mov edx, Me
-  push edx
-  call [ecx+0000008Ch]
-  mov eax, var_2C
-  mov var_44, eax
-  mov var_2C, 00000000h
-  mov edx, var_44
-  lea ecx, var_24
-  call [004011ACh]
-  lea ecx, var_28
-  call [004011CCh]
-  push 0045D226h
-  jmp 0045D225h
-  mov ecx, var_10
-  and ecx, 00000004h
-  test ecx, ecx
-  jz 0045D211h
-  lea ecx, var_24
-  call [004011CCh]
-  lea edx, var_2C
-  push edx
-  lea eax, var_28
-  push eax
-  push 00000002h
-  call [00401150h]
-  add esp, 0000000Ch
-  ret
-  ret
-  mov ecx, Me
-  mov edx, [ecx]
-  mov eax, Me
-  push eax
-  call [edx+00000008h]
-  mov ecx, arg_C
-  mov edx, var_24
-  mov [ecx], edx
-  mov eax, var_10
-  mov ecx, var_20
-  mov fs:[00000000h], ecx
-  pop edi
-  pop esi
-  pop ebx
-  mov esp, ebp
-  pop ebp
-  retn 0008h
+Public Property Get PrivateBuild() '45D140
+  loc_0045D146: ext_4010EC
+  loc_0045D15E: ext_40109C
+  loc_0045D1A3: call var_8004 = global_00401070(FFFFFFFFh, Me, 0, 0, 0)
+  loc_0045D1B8: call var_8008 = global_00401148
+  loc_0045D1CF: var_800C = VersionInfo.Proc_4_28_45DF50(var_28)
+  loc_0045D1D8: var_44 = var_2C
+  loc_0045D1E8: call var_8010 = global_004011AC(var_2C)
+  loc_0045D1F1: call var_8014 = global_004011CC
+  loc_0045D1FC: GoTo loc_0045D225
+  loc_0045D206: If (0 And 4) Then
+  loc_0045D20B:   call var_8018 = global_004011CC(global_0045D226)
+  loc_0045D211: End If
+  loc_0045D21B: call var_801C = global_00401150(00000002h, var_28, var_2C)
+  loc_0045D224: Exit Sub
+  loc_0045D225: ' Referenced from: 0045D1FC
 End Sub
 
-Public Property Get SpecialBuild(arg_C) '45D250
-  push ebp
-  mov ebp, esp
-  sub esp, 00000018h
-  push 00403896h ; ext_4010EC
-  mov eax, fs:[00000000h]
-  push eax
-  mov fs:[00000000h], esp
-  mov eax, 00000024h
-  call 00403890h ; ext_40109C
-  push ebx
-  push esi
-  push edi
-  mov var_18, esp
-  mov var_14, 004033D0h ; "-"
-  mov var_10, 00000000h
-  mov var_C, 00000000h
-  mov eax, Me
-  mov ecx, [eax]
-  mov edx, Me
-  push edx
-  call [ecx+00000004h]
-  mov var_4, 00000001h
-  mov eax, arg_C
-  mov [eax], 00000000h
-  mov var_4, 00000002h
-  push FFFFFFFFh
-  call [00401070h]
-  mov var_4, 00000003h
-  mov edx, 004281A0h ; "SpecialBuild"
-  lea ecx, var_28
-  call [00401148h]
-  lea ecx, var_2C
-  push ecx
-  lea edx, var_28
-  push edx
-  mov eax, Me
-  mov ecx, [eax]
-  mov edx, Me
-  push edx
-  call [ecx+0000008Ch]
-  mov eax, var_2C
-  mov var_44, eax
-  mov var_2C, 00000000h
-  mov edx, var_44
-  lea ecx, var_24
-  call [004011ACh]
-  lea ecx, var_28
-  call [004011CCh]
-  push 0045D336h
-  jmp 0045D335h
-  mov ecx, var_10
-  and ecx, 00000004h
-  test ecx, ecx
-  jz 0045D321h
-  lea ecx, var_24
-  call [004011CCh]
-  lea edx, var_2C
-  push edx
-  lea eax, var_28
-  push eax
-  push 00000002h
-  call [00401150h]
-  add esp, 0000000Ch
-  ret
-  ret
-  mov ecx, Me
-  mov edx, [ecx]
-  mov eax, Me
-  push eax
-  call [edx+00000008h]
-  mov ecx, arg_C
-  mov edx, var_24
-  mov [ecx], edx
-  mov eax, var_10
-  mov ecx, var_20
-  mov fs:[00000000h], ecx
-  pop edi
-  pop esi
-  pop ebx
-  mov esp, ebp
-  pop ebp
-  retn 0008h
+Public Property Get SpecialBuild() '45D250
+  loc_0045D256: ext_4010EC
+  loc_0045D26E: ext_40109C
+  loc_0045D2B3: call var_8004 = global_00401070(FFFFFFFFh, Me, 0, 0, 0)
+  loc_0045D2C8: call var_8008 = global_00401148
+  loc_0045D2DF: var_800C = VersionInfo.Proc_4_28_45DF50(var_28)
+  loc_0045D2E8: var_44 = var_2C
+  loc_0045D2F8: call var_8010 = global_004011AC(var_2C)
+  loc_0045D301: call var_8014 = global_004011CC
+  loc_0045D30C: GoTo loc_0045D335
+  loc_0045D316: If (0 And 4) Then
+  loc_0045D31B:   call var_8018 = global_004011CC(global_0045D336)
+  loc_0045D321: End If
+  loc_0045D32B: call var_801C = global_00401150(00000002h, var_28, var_2C)
+  loc_0045D334: Exit Sub
+  loc_0045D335: ' Referenced from: 0045D30C
 End Sub
 
-Public Property Get FileFlagsRaw(arg_C) '45D360
-  push ebp
-  mov ebp, esp
-  sub esp, 00000018h
-  push 00403896h ; ext_4010EC
-  mov eax, fs:[00000000h]
-  push eax
-  mov fs:[00000000h], esp
-  mov eax, 00000018h
-  call 00403890h ; ext_40109C
-  push ebx
-  push esi
-  push edi
-  mov var_18, esp
-  mov var_14, 00403400h
-  mov var_10, 00000000h
-  mov var_C, 00000000h
-  mov eax, Me
-  mov ecx, [eax]
-  mov edx, Me
-  push edx
-  call [ecx+00000004h]
-  mov var_4, 00000001h
-  mov var_4, 00000002h
-  push FFFFFFFFh
-  call [00401070h]
-  mov var_4, 00000003h
-  mov eax, Me
-  mov ecx, Me
-  mov edx, [eax+00000060h]
-  and edx, [ecx+0000005Ch]
-  mov var_24, edx
-  mov eax, Me
-  mov ecx, [eax]
-  mov edx, Me
-  push edx
-  call [ecx+00000008h]
-  mov eax, arg_C
-  mov ecx, var_24
-  mov [eax], ecx
-  mov eax, var_10
-  mov ecx, var_20
-  mov fs:[00000000h], ecx
-  pop edi
-  pop esi
-  pop ebx
-  mov esp, ebp
-  pop ebp
-  retn 0008h
+Public Property Get FileFlagsRaw() '45D360
+  loc_0045D366: ext_4010EC
+  loc_0045D37E: ext_40109C
+  loc_0045D3BA: call var_8004 = global_00401070(FFFFFFFFh, Me, 0, 0, 0)
+  loc_0045D3D3: var_24 = False
 End Sub
 
-Public Property Get FileFlags(arg_C) '45D400
-  push ebp
-  mov ebp, esp
-  sub esp, 00000018h
-  push 00403896h ; ext_4010EC
-  mov eax, fs:[00000000h]
-  push eax
-  mov fs:[00000000h], esp
-  mov eax, 00000020h
-  call 00403890h ; ext_40109C
-  push ebx
-  push esi
-  push edi
-  mov var_18, esp
-  mov var_14, 00403430h ; "+"
-  mov var_10, 00000000h
-  mov var_C, 00000000h
-  mov eax, Me
-  mov ecx, [eax]
-  mov edx, Me
-  push edx
-  call [ecx+00000004h]
-  mov var_4, 00000001h
-  mov eax, arg_C
-  mov [eax], 00000000h
-  mov var_4, 00000002h
-  push FFFFFFFFh
-  call [00401070h]
-  mov var_4, 00000003h
-  mov ecx, Me
-  mov edx, Me
-  mov eax, [ecx+00000060h]
-  and eax, [edx+0000005Ch]
-  mov var_2C, eax
-  mov var_4, 00000004h
-  mov ecx, var_2C
-  and ecx, 00000001h
-  test ecx, ecx
-  jz 0045D4B1h
-  mov var_4, 00000005h
-  mov edx, var_24
-  push edx
-  push 0042A358h ; "Debug "
-  call [00401044h]
-  mov edx, eax
-  lea ecx, var_24
-  call [004011ACh]
-  mov var_4, 00000007h
-  mov eax, var_2C
-  and eax, 00000004h
-  test eax, eax
-  jz 0045D4E3h
-  mov var_4, 00000008h
-  mov ecx, var_24
-  push ecx
-  push 004290B0h ; "Patched "
-  call [00401044h]
-  mov edx, eax
-  lea ecx, var_24
-  call [004011ACh]
-  mov var_4, 0000000Ah
-  mov edx, var_2C
-  and edx, 00000002h
-  test edx, edx
-  jz 0045D515h
-  mov var_4, 0000000Bh
-  mov eax, var_24
-  push eax
-  push 00427C18h ; "Pre-release "
-  call [00401044h]
-  mov edx, eax
-  lea ecx, var_24
-  call [004011ACh]
-  mov var_4, 0000000Dh
-  mov ecx, var_2C
-  and ecx, 00000008h
-  test ecx, ecx
-  jz 0045D547h
-  mov var_4, 0000000Eh
-  mov edx, var_24
-  push edx
-  push 00427A40h ; "Private "
-  call [00401044h]
-  mov edx, eax
-  lea ecx, var_24
-  call [004011ACh]
-  mov var_4, 00000010h
-  mov eax, var_2C
-  and eax, 00000020h
-  test eax, eax
-  jz 0045D579h
-  mov var_4, 00000011h
-  mov ecx, var_24
-  push ecx
-  push 004276A0h ; "Special "
-  call [00401044h]
-  mov edx, eax
-  lea ecx, var_24
-  call [004011ACh]
-  mov var_4, 00000013h
-  mov edx, var_24
-  lea ecx, var_28
-  call [00401148h]
-  push 0045D5A7h
-  jmp 0045D59Dh
-  lea ecx, var_28
-  call [004011CCh]
-  ret
-  lea ecx, var_24
-  call [004011CCh]
-  ret
-  mov edx, Me
-  mov eax, [edx]
-  mov ecx, Me
-  push ecx
-  call [eax+00000008h]
-  mov edx, arg_C
-  mov eax, var_28
-  mov [edx], eax
-  mov eax, var_10
-  mov ecx, var_20
-  mov fs:[00000000h], ecx
-  pop edi
-  pop esi
-  pop ebx
-  mov esp, ebp
-  pop ebp
-  retn 0008h
+Public Property Get FileFlags() '45D400
+  loc_0045D406: ext_4010EC
+  loc_0045D41E: ext_40109C
+  loc_0045D463: call var_8004 = global_00401070(FFFFFFFFh, Me, 0, 0, 0)
+  loc_0045D48E: If False Then
+  loc_0045D4A0:   call var_8008 = global_00401044("Debug ", var_24)
+  loc_0045D4AB:   call var_800C = global_004011AC
+  loc_0045D4B1: End If
+  loc_0045D4C0: If (False And 4) Then
+  loc_0045D4D2:   call var_8010 = global_00401044("Patched ", var_24)
+  loc_0045D4DD:   call var_8014 = global_004011AC
+  loc_0045D4E3: End If
+  loc_0045D4F2: If (False And 2) Then
+  loc_0045D504:   call var_8018 = global_00401044("Pre-release ", var_24)
+  loc_0045D50F:   call var_801C = global_004011AC
+  loc_0045D515: End If
+  loc_0045D524: If (False And 8) Then
+  loc_0045D536:   call var_8020 = global_00401044("Private ", var_24)
+  loc_0045D541:   call var_8024 = global_004011AC
+  loc_0045D547: End If
+  loc_0045D556: If (False And 32) Then
+  loc_0045D568:   call var_8028 = global_00401044("Special ", var_24)
+  loc_0045D573:   call var_802C = global_004011AC
+  loc_0045D579: End If
+  loc_0045D586: call var_8030 = global_00401148
+  loc_0045D591: GoTo loc_0045D59D
+  loc_0045D596: call var_8034 = global_004011CC(global_0045D5A7)
+  loc_0045D59C: Exit Sub
+  loc_0045D59D: ' Referenced from: 0045D591
+  loc_0045D5A0: call var_8038 = global_004011CC
 End Sub
 
-Public Property Get FileOSRaw(arg_C) '45D5E0
-  push ebp
-  mov ebp, esp
-  sub esp, 00000018h
-  push 00403896h ; ext_4010EC
-  mov eax, fs:[00000000h]
-  push eax
-  mov fs:[00000000h], esp
-  mov eax, 00000018h
-  call 00403890h ; ext_40109C
-  push ebx
-  push esi
-  push edi
-  mov var_18, esp
-  mov var_14, 004034A0h
-  mov var_10, 00000000h
-  mov var_C, 00000000h
-  mov eax, Me
-  mov ecx, [eax]
-  mov edx, Me
-  push edx
-  call [ecx+00000004h]
-  mov var_4, 00000001h
-  mov var_4, 00000002h
-  push FFFFFFFFh
-  call [00401070h]
-  mov var_4, 00000003h
-  mov eax, Me
-  mov ecx, [eax+00000064h]
-  mov var_24, ecx
-  mov edx, Me
-  mov eax, [edx]
-  mov ecx, Me
-  push ecx
-  call [eax+00000008h]
-  mov edx, arg_C
-  mov eax, var_24
-  mov [edx], eax
-  mov eax, var_10
-  mov ecx, var_20
-  mov fs:[00000000h], ecx
-  pop edi
-  pop esi
-  pop ebx
-  mov esp, ebp
-  pop ebp
-  retn 0008h
+Public Property Get FileOSRaw() '45D5E0
+  loc_0045D5E6: ext_4010EC
+  loc_0045D5FE: ext_40109C
+  loc_0045D63A: call var_8004 = global_00401070(FFFFFFFFh, Me, 0, 0, 0)
+  loc_0045D64D: var_24 = global_100
 End Sub
 
-Public Property Get FileOS(arg_C) '45D680
-  push ebp
-  mov ebp, esp
-  sub esp, 00000018h
-  push 00403896h ; ext_4010EC
-  mov eax, fs:[00000000h]
-  push eax
-  mov fs:[00000000h], esp
-  mov eax, 00000020h
-  call 00403890h ; ext_40109C
-  push ebx
-  push esi
-  push edi
-  mov var_18, esp
-  mov var_14, 004034D0h ; "+"
-  mov var_10, 00000000h
-  mov var_C, 00000000h
-  mov eax, Me
-  mov ecx, [eax]
-  mov edx, Me
-  push edx
-  call [ecx+00000004h]
-  mov var_4, 00000001h
-  mov eax, arg_C
-  mov [eax], 00000000h
-  mov var_4, 00000002h
-  push FFFFFFFFh
-  call [00401070h]
-  mov var_4, 00000003h
-  mov ecx, Me
-  mov edx, [ecx+00000064h]
-  mov var_28, edx
-  mov var_4, 00000004h
-  mov eax, var_28
-  and eax, 00000001h
-  test eax, eax
-  jz 0045D724h
-  mov var_4, 00000005h
-  mov edx, 004274B8h ; "Win16 API"
-  lea ecx, var_24
-  call [00401148h]
-  jmp 0045D7B1h
-  mov var_4, 00000006h
-  mov ecx, var_28
-  and ecx, 00000002h
-  test ecx, ecx
-  jz 0045D74Ch
-  mov var_4, 00000007h
-  mov edx, 004267D0h ; "PM16 API"
-  lea ecx, var_24
-  call [00401148h]
-  jmp 0045D7B1h
-  mov var_4, 00000008h
-  mov edx, var_28
-  and edx, 00000003h
-  test edx, edx
-  jz 0045D774h
-  mov var_4, 00000009h
-  mov edx, 004265F0h ; "PM32 API"
-  lea ecx, var_24
-  call [00401148h]
-  jmp 0045D7B1h
-  mov var_4, 0000000Ah
-  mov eax, var_28
-  and eax, 00000004h
-  test eax, eax
-  jz 0045D79Ch
-  mov var_4, 0000000Bh
-  mov edx, 00426414h ; "Win32 API"
-  lea ecx, var_24
-  call [00401148h]
-  jmp 0045D7B1h
-  mov var_4, 0000000Dh
-  mov edx, 0042605Ch ; "Unknown API"
-  lea ecx, var_24
-  call [00401148h]
-  mov var_4, 0000000Fh
-  mov ecx, var_28
-  and ecx, 00010000h
-  test ecx, ecx
-  jz 0045D7EBh
-  mov var_4, 00000010h
-  mov edx, var_24
-  push edx
-  push 0042A178h ; " on DOS"
-  call [00401044h]
-  mov edx, eax
-  lea ecx, var_24
-  call [004011ACh]
-  jmp 0045D889h
-  mov var_4, 00000011h
-  mov eax, var_28
-  and eax, 00020000h
-  test eax, eax
-  jz 0045D821h
-  mov var_4, 00000012h
-  mov ecx, var_24
-  push ecx
-  push 004256E0h ; " on OS2/16"
-  call [00401044h]
-  mov edx, eax
-  lea ecx, var_24
-  call [004011ACh]
-  jmp 0045D889h
-  mov var_4, 00000013h
-  mov edx, var_28
-  and edx, 00030000h
-  test edx, edx
-  jz 0045D858h
-  mov var_4, 00000014h
-  mov eax, var_24
-  push eax
-  push 00424B84h ; " on OS2/32"
-  call [00401044h]
-  mov edx, eax
-  lea ecx, var_24
-  call [004011ACh]
-  jmp 0045D889h
-  mov var_4, 00000015h
-  cmp var_28, 00040000h
-  jnz 0045D889h
-  mov var_4, 00000016h
-  mov ecx, var_24
-  push ecx
-  push 00422D88h ; " on Windows NT"
-  call [00401044h]
-  mov edx, eax
-  lea ecx, var_24
-  call [004011ACh]
-  mov var_4, 00000018h
-  mov edx, var_24
-  lea ecx, var_2C
-  call [00401148h]
-  push 0045D8B7h
-  jmp 0045D8ADh
-  lea ecx, var_2C
-  call [004011CCh]
-  ret
-  lea ecx, var_24
-  call [004011CCh]
-  ret
-  mov edx, Me
-  mov eax, [edx]
-  mov ecx, Me
-  push ecx
-  call [eax+00000008h]
-  mov edx, arg_C
-  mov eax, var_2C
-  mov [edx], eax
-  mov eax, var_10
-  mov ecx, var_20
-  mov fs:[00000000h], ecx
-  pop edi
-  pop esi
-  pop ebx
-  mov esp, ebp
-  pop ebp
-  retn 0008h
+Public Property Get FileOS() '45D680
+  loc_0045D686: ext_4010EC
+  loc_0045D69E: ext_40109C
+  loc_0045D6E3: call var_8004 = global_00401070(FFFFFFFFh, Me, 0, 0, 0)
+  loc_0045D708: If global_100 Then
+  loc_0045D719:   call var_8008 = global_00401148
+  loc_0045D724: Else
+  loc_0045D733:   If (global_100 And 2) Then
+  loc_0045D744:     call var_800C = global_00401148
+  loc_0045D74C:   Else
+  loc_0045D75B:     If (global_100 And 3) Then
+  loc_0045D76C:       call var_8010 = global_00401148
+  loc_0045D774:     Else
+  loc_0045D783:       If (global_100 And 4) Then
+  loc_0045D794:         call var_8014 = global_00401148
+  loc_0045D79C:       Else
+  loc_0045D7AB:         call var_8018 = global_00401148
+  loc_0045D7B1:       End If
+  loc_0045D7B1:     End If
+  loc_0045D7B1:   End If
+  loc_0045D7B1: End If
+  loc_0045D7C3: If (global_100 And 65536) Then
+  loc_0045D7D5:   call var_801C = global_00401044(" on DOS", var_24)
+  loc_0045D7E0:   call var_8020 = global_004011AC
+  loc_0045D7EB: Else
+  loc_0045D7FC:   If (global_100 And 131072) Then
+  loc_0045D80E:     call var_8024 = global_00401044(" on OS2/16", var_24)
+  loc_0045D819:     call var_8028 = global_004011AC
+  loc_0045D821:   Else
+  loc_0045D833:     If (global_100 And 196608) Then
+  loc_0045D845:       call var_802C = global_00401044(" on OS2/32", var_24)
+  loc_0045D850:       call var_8030 = global_004011AC
+  loc_0045D858:     Else
+  loc_0045D866:       If var_28 = 262144 Then
+  loc_0045D878:         call var_8034 = global_00401044(" on Windows NT", var_24)
+  loc_0045D883:         call var_8038 = global_004011AC
+  loc_0045D889:       End If
+  loc_0045D889:     End If
+  loc_0045D889:   End If
+  loc_0045D889: End If
+  loc_0045D896: call var_803C = global_00401148
+  loc_0045D8A1: GoTo loc_0045D8AD
+  loc_0045D8A6: call var_8040 = global_004011CC(global_0045D8B7)
+  loc_0045D8AC: Exit Sub
+  loc_0045D8AD: ' Referenced from: 0045D8A1
+  loc_0045D8B0: call var_8044 = global_004011CC
 End Sub
 
-Public Property Get FileTypeRaw(arg_C) '45D8F0
-  push ebp
-  mov ebp, esp
-  sub esp, 00000018h
-  push 00403896h ; ext_4010EC
-  mov eax, fs:[00000000h]
-  push eax
-  mov fs:[00000000h], esp
-  mov eax, 00000018h
-  call 00403890h ; ext_40109C
-  push ebx
-  push esi
-  push edi
-  mov var_18, esp
-  mov var_14, 00403558h
-  mov var_10, 00000000h
-  mov var_C, 00000000h
-  mov eax, Me
-  mov ecx, [eax]
-  mov edx, Me
-  push edx
-  call [ecx+00000004h]
-  mov var_4, 00000001h
-  mov var_4, 00000002h
-  push FFFFFFFFh
-  call [00401070h]
-  mov var_4, 00000003h
-  mov eax, Me
-  mov ecx, [eax+00000068h]
-  mov var_24, ecx
-  mov edx, Me
-  mov eax, [edx]
-  mov ecx, Me
-  push ecx
-  call [eax+00000008h]
-  mov edx, arg_C
-  mov eax, var_24
-  mov [edx], eax
-  mov eax, var_10
-  mov ecx, var_20
-  mov fs:[00000000h], ecx
-  pop edi
-  pop esi
-  pop ebx
-  mov esp, ebp
-  pop ebp
-  retn 0008h
+Public Property Get FileTypeRaw() '45D8F0
+  loc_0045D8F6: ext_4010EC
+  loc_0045D90E: ext_40109C
+  loc_0045D94A: call var_8004 = global_00401070(FFFFFFFFh, Me, 0, 0, 0)
+  loc_0045D95D: var_24 = global_104
 End Sub
 
-Public Property Get FileType(arg_C) '45D990
-  push ebp
-  mov ebp, esp
-  sub esp, 00000018h
-  push 00403896h ; ext_4010EC
-  mov eax, fs:[00000000h]
-  push eax
-  mov fs:[00000000h], esp
-  mov eax, 00000024h
-  call 00403890h ; ext_40109C
-  push ebx
-  push esi
-  push edi
-  mov var_18, esp
-  mov var_14, 00403588h ; "+"
-  mov var_10, 00000000h
-  mov var_C, 00000000h
-  mov eax, Me
-  mov ecx, [eax]
-  mov edx, Me
-  push edx
-  call [ecx+00000004h]
-  mov var_4, 00000001h
-  mov eax, arg_C
-  mov [eax], 00000000h
-  mov var_4, 00000002h
-  push FFFFFFFFh
-  call [00401070h]
-  mov var_4, 00000003h
-  mov ecx, Me
-  mov edx, [ecx+00000068h]
-  mov var_2C, edx
-  mov eax, var_2C
-  mov var_44, eax
-  cmp var_44, 00000007h
-  ja 0045DACAh
-  mov ecx, var_44
-  jmp [ecx*4+0045DB22h]
-  jmp 0045DACAh
-  mov var_4, 00000005h
-  mov edx, 004247BCh ; "Application"
-  lea ecx, var_24
-  call [00401148h]
-  jmp 0045DACAh
-  mov var_4, 00000007h
-  mov edx, 004256FCh ; "DLL"
-  lea ecx, var_24
-  call [00401148h]
-  jmp 0045DACAh
-  mov var_4, 00000009h
-  mov edx, 00429BD8h ; "Driver"
-  lea ecx, var_24
-  call [00401148h]
-  jmp 0045DACAh
-  mov var_4, 0000000Bh
-  mov edx, 00427A58h ; "Font"
-  lea ecx, var_24
-  call [00401148h]
-  jmp 0045DACAh
-  mov var_4, 0000000Dh
-  mov edx, 00422420h ; "Static-link library"
-  lea ecx, var_24
-  call [00401148h]
-  jmp 0045DACAh
-  mov var_4, 0000000Fh
-  mov edx, 00428B18h ; "Unknown"
-  lea ecx, var_24
-  call [00401148h]
-  jmp 0045DACAh
-  mov var_4, 00000011h
-  mov edx, 004274D0h ; "VXD"
-  lea ecx, var_24
-  call [00401148h]
-  mov var_4, 00000013h
-  mov edx, var_24
-  lea ecx, var_28
-  call [00401148h]
-  push 0045DAF8h
-  jmp 0045DAEEh
-  lea ecx, var_28
-  call [004011CCh]
-  ret
-  lea ecx, var_24
-  call [004011CCh]
-  ret
-  mov edx, Me
-  mov eax, [edx]
-  mov ecx, Me
-  push ecx
-  call [eax+00000008h]
-  mov edx, arg_C
-  mov eax, var_28
-  mov [edx], eax
-  mov eax, var_10
-  mov ecx, var_20
-  mov fs:[00000000h], ecx
-  pop edi
-  pop esi
-  pop ebx
-  mov esp, ebp
-  pop ebp
-  retn 0008h
+Public Property Get FileType() '45D990
+  loc_0045D996: ext_4010EC
+  loc_0045D9AE: ext_40109C
+  loc_0045D9F3: call var_8004 = global_00401070(FFFFFFFFh, Me, 0, 0, 0)
+  loc_0045DA06: var_2C = global_104
+  loc_0045DA0C: var_44 = var_2C
+  loc_0045DA1C: Select Case var_2C
+  loc_0045DA23:   Case Else
+  loc_0045DA23:     GoTo loc_0045DACA
+  loc_0045DA28:   Case 1
+  loc_0045DA37:     call var_8008 = global_00401148
+  loc_0045DA3D:     GoTo loc_0045DACA
+  loc_0045DA42:   Case 2
+  loc_0045DA51:     call var_800C = global_00401148
+  loc_0045DA57:     GoTo loc_0045DACA
+  loc_0045DA59:   Case 3
+  loc_0045DA68:     call var_8010 = global_00401148
+  loc_0045DA6E:     GoTo loc_0045DACA
+  loc_0045DA70:   Case 4
+  loc_0045DA7F:     call var_8014 = global_00401148
+  loc_0045DA85:     GoTo loc_0045DACA
+  loc_0045DA87:   Case 7
+  loc_0045DA96:     call var_8018 = global_00401148
+  loc_0045DA9C:     GoTo loc_0045DACA
+  loc_0045DA9E:   Case 0
+  loc_0045DAAD:     call var_801C = global_00401148
+  loc_0045DAB3:     GoTo loc_0045DACA
+  loc_0045DAB5:   Case 5
+  loc_0045DAC4:     call var_8020 = global_00401148
+  loc_0045DACA:   Case 6
+  loc_0045DACA: End Select
+  loc_0045DACA: ' Referenced from: 0045DA23
+  loc_0045DACA: ' Referenced from: 0045DA3D
+  loc_0045DACA: ' Referenced from: 0045DA57
+  loc_0045DACA: ' Referenced from: 0045DA6E
+  loc_0045DACA: ' Referenced from: 0045DA85
+  loc_0045DACA: ' Referenced from: 0045DA9C
+  loc_0045DACA: ' Referenced from: 0045DAB3
+  loc_0045DAD7: call var_8024 = global_00401148
+  loc_0045DAE2: GoTo loc_0045DAEE
+  loc_0045DAE7: call var_8028 = global_004011CC(global_0045DAF8)
+  loc_0045DAED: Exit Sub
+  loc_0045DAEE: ' Referenced from: 0045DAE2
+  loc_0045DAF1: call var_802C = global_004011CC
 End Sub
 
-Public Property Get FileSubTypeRaw(arg_C) '45DB50
-  push ebp
-  mov ebp, esp
-  sub esp, 00000018h
-  push 00403896h ; ext_4010EC
-  mov eax, fs:[00000000h]
-  push eax
-  mov fs:[00000000h], esp
-  mov eax, 00000018h
-  call 00403890h ; ext_40109C
-  push ebx
-  push esi
-  push edi
-  mov var_18, esp
-  mov var_14, 004035F8h
-  mov var_10, 00000000h
-  mov var_C, 00000000h
-  mov eax, Me
-  mov ecx, [eax]
-  mov edx, Me
-  push edx
-  call [ecx+00000004h]
-  mov var_4, 00000001h
-  mov var_4, 00000002h
-  push FFFFFFFFh
-  call [00401070h]
-  mov var_4, 00000003h
-  mov eax, Me
-  mov ecx, [eax+0000006Ch]
-  mov var_24, ecx
-  mov edx, Me
-  mov eax, [edx]
-  mov ecx, Me
-  push ecx
-  call [eax+00000008h]
-  mov edx, arg_C
-  mov eax, var_24
-  mov [edx], eax
-  mov eax, var_10
-  mov ecx, var_20
-  mov fs:[00000000h], ecx
-  pop edi
-  pop esi
-  pop ebx
-  mov esp, ebp
-  pop ebp
-  retn 0008h
+Public Property Get FileSubTypeRaw() '45DB50
+  loc_0045DB56: ext_4010EC
+  loc_0045DB6E: ext_40109C
+  loc_0045DBAA: call var_8004 = global_00401070(FFFFFFFFh, Me, 0, 0, 0)
+  loc_0045DBBD: var_24 = global_108
 End Sub
 
-Public Property Get FileSubType(arg_C) '45DBF0
-  push ebp
-  mov ebp, esp
-  sub esp, 00000018h
-  push 00403896h ; ext_4010EC
-  mov eax, fs:[00000000h]
-  push eax
-  mov fs:[00000000h], esp
-  mov eax, 00000034h
-  call 00403890h ; ext_40109C
-  push ebx
-  push esi
-  push edi
-  mov var_18, esp
-  mov var_14, 00403628h ; "+"
-  mov var_10, 00000000h
-  mov var_C, 00000000h
-  mov eax, Me
-  mov ecx, [eax]
-  mov edx, Me
-  push edx
-  call [ecx+00000004h]
-  mov var_4, 00000001h
-  mov eax, arg_C
-  mov [eax], 00000000h
-  mov var_4, 00000002h
-  push FFFFFFFFh
-  call [00401070h]
-  mov var_4, 00000003h
-  mov edx, 00428B18h ; "Unknown"
-  lea ecx, var_24
-  call [00401148h]
-  mov var_4, 00000004h
-  mov ecx, Me
-  mov edx, [ecx+00000068h]
-  mov var_2C, edx
-  mov eax, var_2C
-  mov var_4C, eax
-  cmp var_4C, 00000003h
-  jz 0045DCB2h
-  cmp var_4C, 00000004h
-  jz 0045DE0Ah
-  cmp var_4C, 00000005h
-  jz 0045DE92h
-  jmp 0045DEB1h
-  jmp 0045DEB1h
-  jmp 0045DEB1h
-  jmp 0045DEB1h
-  mov var_4, 00000008h
-  mov ecx, Me
-  mov edx, [ecx+0000006Ch]
-  mov var_30, edx
-  mov eax, var_30
-  mov var_50, eax
-  cmp var_50, 0000000Bh
-  ja 0045DE05h
-  mov ecx, var_50
-  jmp [ecx*4+0045DF09h]
-  jmp 0045DE05h
-  mov var_4, 0000000Ah
-  mov edx, 004229C4h ; "Communications"
-  lea ecx, var_24
-  call [00401148h]
-  jmp 0045DE05h
-  mov var_4, 0000000Ch
-  mov edx, 00426F3Ch ; "Display"
-  lea ecx, var_24
-  call [00401148h]
-  jmp 0045DE05h
-  mov var_4, 0000000Eh
-  mov edx, 00421190h ; "Input Method"
-  lea ecx, var_24
-  call [00401148h]
-  jmp 0045DE05h
-  mov var_4, 00000010h
-  mov edx, 004238C4h ; "Installable"
-  lea ecx, var_24
-  call [00401148h]
-  jmp 0045DE05h
-  mov var_4, 00000012h
-  mov edx, 00425334h ; "Keyboard"
-  lea ecx, var_24
-  call [00401148h]
-  jmp 0045DE05h
-  mov var_4, 00000014h
-  mov edx, 00424404h ; "Language"
-  lea ecx, var_24
-  call [00401148h]
-  jmp 0045DE05h
-  mov var_4, 00000016h
-  mov edx, 0042C838h ; "Mouse"
-  lea ecx, var_24
-  call [00401148h]
-  jmp 0045DE05h
-  mov var_4, 00000018h
-  mov edx, 004269B0h ; "Network"
-  lea ecx, var_24
-  call [00401148h]
-  jmp 0045DE05h
-  mov var_4, 0000001Ah
-  mov edx, 00426B8Ch ; "Printer"
-  lea ecx, var_24
-  call [00401148h]
-  jmp 0045DE05h
-  mov var_4, 0000001Ch
-  mov edx, 00429A00h ; "Sound"
-  lea ecx, var_24
-  call [00401148h]
-  jmp 0045DE05h
-  mov var_4, 0000001Eh
-  mov edx, 00424228h ; "System"
-  lea ecx, var_24
-  call [00401148h]
-  jmp 0045DE05h
-  mov var_4, 00000020h
-  mov edx, 00428B18h ; "Unknown"
-  lea ecx, var_24
-  call [00401148h]
-  jmp 0045DEB1h
-  mov var_4, 00000023h
-  mov edx, Me
-  mov eax, [edx+0000006Ch]
-  mov var_34, eax
-  mov ecx, var_34
-  mov var_54, ecx
-  cmp var_54, 00000003h
-  ja 0045DE8Ch
-  mov edx, var_54
-  jmp [edx*4+0045DF39h]
-  jmp 0045DE8Ch
-  mov var_4, 00000025h
-  mov edx, 00423C8Ch ; "Raster"
-  lea ecx, var_24
-  call [00401148h]
-  jmp 0045DE8Ch
-  mov var_4, 00000027h
-  mov edx, 00420DECh ; "TrueType"
-  lea ecx, var_24
-  call [00401148h]
-  jmp 0045DE8Ch
-  mov var_4, 00000029h
-  mov edx, 00423158h ; "Vector"
-  lea ecx, var_24
-  call [00401148h]
-  jmp 0045DE8Ch
-  mov var_4, 0000002Bh
-  mov edx, 00428B18h ; "Unknown"
-  lea ecx, var_24
-  call [00401148h]
-  jmp 0045DEB1h
-  jmp 0045DEB1h
-  jmp 0045DEB1h
-  mov var_4, 00000030h
-  mov eax, Me
-  mov ecx, [eax+0000006Ch]
-  push ecx
-  call [0040100Ch]
-  mov edx, eax
-  lea ecx, var_24
-  call [004011ACh]
-  mov var_4, 00000032h
-  mov edx, var_24
-  lea ecx, var_28
-  call [00401148h]
-  push 0045DEDFh
-  jmp 0045DED5h
-  lea ecx, var_28
-  call [004011CCh]
-  ret
-  lea ecx, var_24
-  call [004011CCh]
-  ret
-  mov edx, Me
-  mov eax, [edx]
-  mov ecx, Me
-  push ecx
-  call [eax+00000008h]
-  mov edx, arg_C
-  mov eax, var_28
-  mov [edx], eax
-  mov eax, var_10
-  mov ecx, var_20
-  mov fs:[00000000h], ecx
-  pop edi
-  pop esi
-  pop ebx
-  mov esp, ebp
-  pop ebp
-  retn 0008h
+Public Property Get FileSubType() '45DBF0
+  loc_0045DBF6: ext_4010EC
+  loc_0045DC0E: ext_40109C
+  loc_0045DC53: call var_8004 = global_00401070(FFFFFFFFh, Me, 0, 0, 0)
+  loc_0045DC68: call var_8008 = global_00401148
+  loc_0045DC7B: var_2C = global_104
+  loc_0045DC88: If var_2C <> 3 Then
+  loc_0045DC8E:   If var_4C = 4 Then GoTo loc_0045DE0A
+  loc_0045DC98:   If var_4C = 5 Then GoTo loc_0045DE92
+  loc_0045DC9E:   GoTo loc_0045DEB1
+  loc_0045DCA3:   GoTo loc_0045DEB1
+  loc_0045DCA8:   GoTo loc_0045DEB1
+  loc_0045DCB2: Else
+  loc_0045DCC5:   var_50 = global_108
+  loc_0045DCD5:   Select Case var_2C
+  loc_0045DCDC:     Case Else
+  loc_0045DCDC:       GoTo loc_0045DE05
+  loc_0045DCE1:     Case 10
+  loc_0045DCF0:       call var_800C = global_00401148
+  loc_0045DCF6:       GoTo loc_0045DE05
+  loc_0045DCFB:     Case 4
+  loc_0045DD0A:       call var_8010 = global_00401148
+  loc_0045DD10:       GoTo loc_0045DE05
+  loc_0045DD15:     Case 11
+  loc_0045DD24:       call var_8014 = global_00401148
+  loc_0045DD2A:       GoTo loc_0045DE05
+  loc_0045DD2F:     Case 8
+  loc_0045DD3E:       call var_8018 = global_00401148
+  loc_0045DD44:       GoTo loc_0045DE05
+  loc_0045DD49:     Case 2
+  loc_0045DD58:       call var_801C = global_00401148
+  loc_0045DD5E:       GoTo loc_0045DE05
+  loc_0045DD63:     Case 3
+  loc_0045DD72:       call var_8020 = global_00401148
+  loc_0045DD78:       GoTo loc_0045DE05
+  loc_0045DD7D:     Case 5
+  loc_0045DD8C:       call var_8024 = global_00401148
+  loc_0045DD92:       GoTo loc_0045DE05
+  loc_0045DD94:     Case 6
+  loc_0045DDA3:       call var_8028 = global_00401148
+  loc_0045DDA9:       GoTo loc_0045DE05
+  loc_0045DDAB:     Case 1
+  loc_0045DDBA:       call var_802C = global_00401148
+  loc_0045DDC0:       GoTo loc_0045DE05
+  loc_0045DDC2:     Case 9
+  loc_0045DDD1:       call var_8030 = global_00401148
+  loc_0045DDD7:       GoTo loc_0045DE05
+  loc_0045DDD9:     Case 7
+  loc_0045DDE8:       call var_8034 = global_00401148
+  loc_0045DDEE:       GoTo loc_0045DE05
+  loc_0045DDF0:     Case 0
+  loc_0045DDFF:       call var_8038 = global_00401148
+  loc_0045DE05:   End Select
+  loc_0045DE05:   GoTo loc_0045DEB1
+  loc_0045DE1D:   var_54 = global_108
+  loc_0045DE29:   Select Case global_108
+  loc_0045DE30:     Case Else
+  loc_0045DE30:       GoTo loc_0045DE8C
+  loc_0045DE32:     Case 1
+  loc_0045DE41:       call var_803C = global_00401148
+  loc_0045DE47:       GoTo loc_0045DE8C
+  loc_0045DE49:     Case 3
+  loc_0045DE58:       call var_8040 = global_00401148
+  loc_0045DE5E:       GoTo loc_0045DE8C
+  loc_0045DE60:     Case 2
+  loc_0045DE6F:       call var_8044 = global_00401148
+  loc_0045DE75:       GoTo loc_0045DE8C
+  loc_0045DE77:     Case 0
+  loc_0045DE86:       call var_8048 = global_00401148
+  loc_0045DE8C:   End Select
+  loc_0045DE8C:   GoTo loc_0045DEB1
+  loc_0045DE8E:   GoTo loc_0045DEB1
+  loc_0045DE90:   GoTo loc_0045DEB1
+  loc_0045DEA0:   call var_804C = global_0040100C(global_108)
+  loc_0045DEAB:   call var_8050 = global_004011AC
+  loc_0045DEB1: End If
+  loc_0045DEB1: ' Referenced from: 0045DE05
+  loc_0045DEB1: ' Referenced from: 0045DE8C
+  loc_0045DEB1: ' Referenced from: 0045DE8E
+  loc_0045DEB1: ' Referenced from: 0045DE90
+  loc_0045DEBE: call var_8054 = global_00401148
+  loc_0045DEC9: GoTo loc_0045DED5
+  loc_0045DECE: call var_8058 = global_004011CC(global_0045DEDF)
+  loc_0045DED4: Exit Sub
+  loc_0045DED5: ' Referenced from: 0045DEC9
+  loc_0045DED8: call var_805C = global_004011CC
 End Sub
 
-Private Sub Proc_4_28_45DF50(arg_C, arg_10) '45DF50
-  push ebp
-  mov ebp, esp
-  sub esp, 00000018h
-  push 00403896h ; ext_4010EC
-  mov eax, fs:[00000000h]
-  push eax
-  mov fs:[00000000h], esp
-  mov eax, 0000004Ch
-  call 00403890h ; ext_40109C
-  push ebx
-  push esi
-  push edi
-  mov var_18, esp
-  mov var_14, 00403718h ; "."
-  mov var_10, 00000000h
-  mov var_C, 00000000h
-  mov var_4, 00000001h
-  mov eax, arg_10
-  mov [eax], 00000000h
-  mov var_4, 00000002h
-  push FFFFFFFFh
-  call [00401070h]
-  mov var_4, 00000003h
-  push FFFFFFFFh
-  call [00401070h]
-  mov var_4, 00000004h
-  push 00420300h ; "\StringFileInfo\"
-  mov ecx, Me
-  mov edx, [ecx+00000040h]
-  push edx
-  call [00401044h]
-  mov edx, eax
-  lea ecx, var_3C
-  call [004011ACh]
-  push eax
-  push 00418DA4h ; "\"
-  call [00401044h]
-  mov edx, eax
-  lea ecx, var_40
-  call [004011ACh]
-  push eax
-  mov eax, arg_C
-  mov ecx, [eax]
-  push ecx
-  call [00401044h]
-  mov edx, eax
-  lea ecx, var_30
-  call [004011ACh]
-  lea edx, var_40
-  push edx
-  lea eax, var_3C
-  push eax
-  push 00000002h
-  call [00401150h]
-  add esp, 0000000Ch
-  mov var_4, 00000005h
-  mov ecx, Me
-  mov edx, [ecx+0000003Ch]
-  push edx
-  lea eax, var_38
-  push eax
-  call [0040117Ch]
-  cmp var_38, 00000000h
-  jz 0045E079h
-  mov ecx, var_38
-  cmp [ecx], 0001h
-  jnz 0045E079h
-  mov edx, var_38
-  xor eax, eax
-  sub eax, [edx+00000014h]
-  mov var_48, eax
-  mov ecx, var_38
-  mov edx, var_48
-  cmp edx, [ecx+00000010h]
-  jae 0045E068h
-  mov var_68, 00000000h
-  jmp 0045E071h
-  call [004010ACh]
-  mov var_68, eax
-  mov eax, var_48
-  mov var_6C, eax
-  jmp 0045E082h
-  call [004010ACh]
-  mov var_6C, eax
-  lea ecx, var_24
-  push ecx
-  lea edx, var_2C
-  push edx
-  mov eax, var_30
-  push eax
-  lea ecx, var_3C
-  push ecx
-  call [00401188h]
-  push eax
-  mov edx, var_38
-  mov eax, [edx+0000000Ch]
-  add eax, var_6C
-  push eax
-  call 0043A760h ; VerQueryValue(%x1v, %x2v, %x3v, %x4v)
-  mov var_44, eax
-  call [00401054h]
-  lea ecx, var_38
-  push ecx
-  call [004011C4h]
-  mov edx, var_3C
-  push edx
-  lea eax, var_30
-  push eax
-  call [004010F4h]
-  xor ecx, ecx
-  cmp var_44, 00000000h
-  setnz cl
-  neg ecx
-  mov var_4C, cx
-  lea ecx, var_3C
-  call [004011CCh]
-  movsx edx, var_4C
-  test edx, edx
-  jz 0045E185h
-  mov var_4, 00000006h
-  mov eax, var_24
-  sub eax, 00000001h
-  jo 0045E200h
-  push eax
-  call [00401098h]
-  mov edx, eax
-  lea ecx, var_28
-  call [004011ACh]
-  mov var_4, 00000007h
-  mov ecx, var_2C
-  push ecx
-  mov edx, var_28
-  push edx
-  lea eax, var_3C
-  push eax
-  call [00401188h]
-  push eax
-  call 0043A7A4h ; lstrcpy(%x1v, %x2v)
-  call [00401054h]
-  mov ecx, var_3C
-  push ecx
-  lea edx, var_28
-  push edx
-  call [004010F4h]
-  lea ecx, var_3C
-  call [004011CCh]
-  mov var_4, 00000008h
-  lea eax, var_3C
-  push eax
-  lea ecx, var_28
-  push ecx
-  mov edx, Me
-  mov eax, [edx]
-  mov ecx, Me
-  push ecx
-  call [eax+00000094h]
-  mov edx, var_3C
-  mov var_64, edx
-  mov var_3C, 00000000h
-  mov edx, var_64
-  lea ecx, var_28
-  call [004011ACh]
-  mov var_4, 0000000Bh
-  mov edx, var_28
-  lea ecx, var_34
-  call [00401148h]
-  push 0045E1E3h
-  jmp 0045E1D0h
-  mov eax, var_10
-  and eax, 00000004h
-  test eax, eax
-  jz 0045E1B2h
-  lea ecx, var_34
-  call [004011CCh]
-  lea ecx, var_38
-  push ecx
-  call [004011C4h]
-  lea edx, var_40
-  push edx
-  lea eax, var_3C
-  push eax
-  push 00000002h
-  call [00401150h]
-  add esp, 0000000Ch
-  ret
-  lea ecx, var_28
-  call [004011CCh]
-  lea ecx, var_30
-  call [004011CCh]
-  ret
-  mov ecx, arg_10
-  mov edx, var_34
-  mov [ecx], edx
-  xor eax, eax
-  mov ecx, var_20
-  mov fs:[00000000h], ecx
-  pop edi
-  pop esi
-  pop ebx
-  mov esp, ebp
-  pop ebp
-  retn 000Ch
+Private  Proc_4_28_45DF50(arg_C) '45DF50
+  loc_0045DF56: ext_4010EC
+  loc_0045DF6E: ext_40109C
+  loc_0045DFA7: call var_8004 = global_00401070(FFFFFFFFh, 0, 0, 0)
+  loc_0045DFB6: call var_8008 = global_00401070(FFFFFFFFh)
+  loc_0045DFCF: call var_800C = global_00401044(global_64, "\StringFileInfo\")
+  loc_0045DFDA: call var_8010 = global_004011AC
+  loc_0045DFE6: call var_8014 = global_00401044("\", var_8010)
+  loc_0045DFF1: call var_8018 = global_004011AC
+  loc_0045DFFE: call var_801C = global_00401044(arg_C, var_8018)
+  loc_0045E009: call var_8020 = global_004011AC
+  loc_0045E019: call var_8024 = global_00401150(00000002h, var_3C, var_40)
+  loc_0045E034: call var_8028 = global_0040117C(var_38, global_60)
+  loc_0045E03E: If var_38 Then
+  loc_0045E047:   If var_38 = 1 Then
+  loc_0045E051:     var_48 = (eax - var_38(20))
+  loc_0045E05D:     If var_48 < 0 Then
+  loc_0045E068:     Else
+  loc_0045E068:       call var_802C = global_004010AC
+  loc_0045E06E:       var_68 = var_802C
+  loc_0045E071:     End If
+  loc_0045E074:     var_6C = var_48
+  loc_0045E079:   Else
+  loc_0045E079:   End If
+  loc_0045E079:   call var_8030 = global_004010AC
+  loc_0045E07F:   var_6C = var_8030
+  loc_0045E082: End If
+  loc_0045E092: call var_8034 = global_00401188(var_3C, var_30, var_2C, var_24)
+  loc_0045E09F: var_38(12) = var_38(12) + var_6C
+  loc_0045E0AB: call var_803C = global_00401054
+  loc_0045E0B5: call var_8040 = global_004011C4(var_38)
+  loc_0045E0C3: call var_8044 = global_004010F4(var_30, var_3C)
+  loc_0045E0DB: call var_8048 = global_004011CC
+  loc_0045E0E7: If (VerQueryValue(var_38(12)+var_6C, var_8034, , )) Then
+  loc_0045E101:   call var_804C = global_00401098(var_24(-1))
+  loc_0045E10C:   call var_8050 = global_004011AC
+  loc_0045E125:   call var_8054 = global_00401188(var_3C, var_28, var_2C)
+  loc_0045E12C:   var_8058 = lstrcpy(var_8054, )
+  loc_0045E131:   call var_805C = global_00401054
+  loc_0045E13F:   call var_8060 = global_004010F4(var_28, var_3C)
+  loc_0045E148:   call var_8064 = global_004011CC
+  loc_0045E166:   var_8068 = VersionInfo.Proc_4_30_45ED50(var_28)
+  loc_0045E16F:   var_64 = var_3C
+  loc_0045E17F:   call var_806C = global_004011AC(var_3C)
+  loc_0045E185: End If
+  loc_0045E192: call var_8070 = global_00401148
+  loc_0045E19D: GoTo loc_0045E1D0
+  loc_0045E1A7: If (0 And 4) Then
+  loc_0045E1AC:   call var_8074 = global_004011CC(global_0045E1E3)
+  loc_0045E1B2: End If
+  loc_0045E1B6: call var_8078 = global_004011C4(var_38)
+  loc_0045E1C6: call var_807C = global_00401150(00000002h, var_3C, var_40)
+  loc_0045E1CF: Exit Sub
+  loc_0045E1D0: ' Referenced from: 0045E19D
+  loc_0045E1D3: call var_8080 = global_004011CC
+  loc_0045E1DC: call var_8084 = global_004011CC
 End Sub
 
-Private Sub Proc_4_29_45E210() '45E210
-  push ebp
-  mov ebp, esp
-  sub esp, 00000018h
-  push 00403896h ; ext_4010EC
-  mov eax, fs:[00000000h]
-  push eax
-  mov fs:[00000000h], esp
-  mov eax, 00000138h
-  call 00403890h ; ext_40109C
-  push ebx
-  push esi
-  push edi
-  mov var_18, esp
-  mov var_14, 00403770h ; "&"
-  mov var_10, 00000000h
-  mov var_C, 00000000h
-  mov var_4, 00000001h
-  mov var_4, 00000002h
-  push FFFFFFFFh
-  call [00401070h]
-  mov var_4, 00000003h
-  mov eax, Me
-  mov ecx, [eax+00000034h]
-  push ecx
-  call [00401018h]
-  test eax, eax
-  jle 0045E393h
-  mov var_4, 00000004h
-  mov edx, Me
-  mov eax, [edx+00000034h]
-  push eax
-  lea ecx, var_48
-  push ecx
-  call [00401188h]
-  push eax
-  call 0043A66Ch ; GetModuleHandle(%x1v)
-  mov var_E4, eax
-  call [00401054h]
-  mov edx, var_48
-  push edx
-  mov eax, Me
-  add eax, 00000034h
-  push eax
-  call [004010F4h]
-  mov ecx, var_E4
-  mov var_30, ecx
-  lea ecx, var_48
-  call [004011CCh]
-  mov var_4, 00000005h
-  mov var_4, 00000007h
-  push 00000104h
-  lea edx, var_A0
-  push edx
-  call [004010A4h]
-  lea eax, var_A0
-  push eax
-  call [0040101Ch]
-  mov edx, eax
-  lea ecx, var_48
-  call [004011ACh]
-  mov edx, eax
-  mov ecx, Me
-  add ecx, 00000038h
-  call [00401148h]
-  lea ecx, var_48
-  call [004011CCh]
-  lea ecx, var_A0
-  call [00401014h]
-  mov var_4, 00000008h
-  mov ecx, Me
-  mov edx, [ecx+00000038h]
-  push edx
-  call [00401018h]
-  push eax
-  mov eax, Me
-  mov ecx, [eax+00000038h]
-  push ecx
-  lea edx, var_48
-  push edx
-  call [00401188h]
-  push eax
-  mov eax, var_30
-  push eax
-  call 0043A620h ; GetModuleFileName(%x1v, %x2v, %x3v)
-  mov var_E4, eax
-  call [00401054h]
-  mov ecx, var_48
-  push ecx
-  mov edx, Me
-  add edx, 00000038h
-  push edx
-  call [004010F4h]
-  xor eax, eax
-  cmp var_E4, 00000000h
-  setz al
-  neg eax
-  mov var_E8, ax
-  lea ecx, var_48
-  call [004011CCh]
-  mov var_4, 0000000Bh
-  mov edx, Me
-  mov eax, [edx+00000038h]
-  push eax
-  call [00401018h]
-  mov var_4, 0000000Dh
-  lea ecx, var_34
-  push ecx
-  mov edx, Me
-  mov eax, [edx+00000038h]
-  push eax
-  lea ecx, var_48
-  push ecx
-  call [00401188h]
-  push eax
-  call 0043A6CCh ; GetFileVersionInfoSize(%x1v, %x2v)
-  mov var_E4, eax
-  call [00401054h]
-  mov edx, var_48
-  push edx
-  mov eax, Me
-  add eax, 00000038h
-  push eax
-  call [004010F4h]
-  mov ecx, var_E4
-  mov var_24, ecx
-  lea ecx, var_48
-  call [004011CCh]
-  mov var_4, 0000000Eh
-  mov var_4, 00000010h
-  push 00000000h
-  mov edx, var_24
-  sub edx, 00000001h
-  jo 0045ED3Eh
-  push edx
-  push 00000001h
-  push 00000011h
-  mov eax, Me
-  add eax, 0000003Ch
-  push eax
-  push 00000001h
-  push 00000080h
-  call [004010D0h]
-  add esp, 0000001Ch
-  mov var_4, 00000011h
-  mov ecx, Me
-  mov edx, [ecx+0000003Ch]
-  push edx
-  lea eax, var_38
-  push eax
-  call [0040117Ch]
-  cmp var_38, 00000000h
-  jz 0045E499h
-  mov ecx, var_38
-  cmp [ecx], 0001h
-  jnz 0045E499h
-  mov edx, var_38
-  xor eax, eax
-  sub eax, [edx+00000014h]
-  mov var_E8, eax
-  mov ecx, var_38
-  mov edx, var_E8
-  cmp edx, [ecx+00000010h]
-  jae 0045E47Fh
-  mov var_11C, 00000000h
-  jmp 0045E48Bh
-  call [004010ACh]
-  mov var_11C, eax
-  mov eax, var_E8
-  mov var_120, eax
-  jmp 0045E4A5h
-  call [004010ACh]
-  mov var_120, eax
-  mov ecx, var_38
-  mov edx, [ecx+0000000Ch]
-  add edx, var_120
-  push edx
-  mov eax, var_24
-  push eax
-  push 00000000h
-  mov ecx, Me
-  mov edx, [ecx+00000038h]
-  push edx
-  lea eax, var_48
-  push eax
-  call [00401188h]
-  push eax
-  call 0043A718h ; GetFileVersionInfo(%x1v, %x2v, %x3v, %x4v)
-  mov var_E4, eax
-  call [00401054h]
-  mov ecx, var_48
-  push ecx
-  mov edx, Me
-  add edx, 00000038h
-  push edx
-  call [004010F4h]
-  lea eax, var_38
-  push eax
-  call [004011C4h]
-  xor ecx, ecx
-  cmp var_E4, 00000000h
-  setz cl
-  neg ecx
-  mov var_EC, cx
-  lea ecx, var_48
-  call [004011CCh]
-  mov var_4, 00000013h
-  mov eax, Me
-  mov ecx, [eax+0000003Ch]
-  push ecx
-  lea edx, var_38
-  push edx
-  call [0040117Ch]
-  cmp var_38, 00000000h
-  jz 0045E57Dh
-  mov eax, var_38
-  cmp [eax], 0001h
-  jnz 0045E57Dh
-  mov ecx, var_38
-  xor edx, edx
-  sub edx, [ecx+00000014h]
-  mov var_E8, edx
-  mov eax, var_38
-  mov ecx, var_E8
-  cmp ecx, [eax+00000010h]
-  jae 0045E563h
-  mov var_124, 00000000h
-  jmp 0045E56Fh
-  call [004010ACh]
-  mov var_124, eax
-  mov edx, var_E8
-  mov var_128, edx
-  jmp 0045E589h
-  call [004010ACh]
-  mov var_128, eax
-  lea eax, var_24
-  push eax
-  lea ecx, var_2C
-  push ecx
-  push 0043A970h ; "\VarFileInfo\Translation"
-  lea edx, var_48
-  push edx
-  call [00401188h]
-  push eax
-  mov eax, var_38
-  mov ecx, [eax+0000000Ch]
-  add ecx, var_128
-  push ecx
-  call 0043A760h ; VerQueryValue(%x1v, %x2v, %x3v, %x4v)
-  mov var_E4, eax
-  call [00401054h]
-  lea edx, var_38
-  push edx
-  call [004011C4h]
-  xor eax, eax
-  cmp var_E4, 00000000h
-  setz al
-  neg eax
-  mov var_EC, ax
-  lea ecx, var_48
-  call [004011CCh]
-  mov var_4, 00000015h
-  push 00000000h
-  mov edx, var_24
-  sub edx, 00000001h
-  jo 0045ED3Eh
-  push edx
-  push 00000001h
-  push 00000011h
-  lea eax, var_28
-  push eax
-  push 00000001h
-  push 00000080h
-  call [004010D0h]
-  add esp, 0000001Ch
-  mov var_4, 00000016h
-  mov ecx, var_28
-  push ecx
-  lea edx, var_38
-  push edx
-  call [0040117Ch]
-  cmp var_38, 00000000h
-  jz 0045E67Bh
-  mov eax, var_38
-  cmp [eax], 0001h
-  jnz 0045E67Bh
-  mov ecx, var_38
-  xor edx, edx
-  sub edx, [ecx+00000014h]
-  mov var_E8, edx
-  mov eax, var_38
-  mov ecx, var_E8
-  cmp ecx, [eax+00000010h]
-  jae 0045E661h
-  mov var_12C, 00000000h
-  jmp 0045E66Dh
-  call [004010ACh]
-  mov var_12C, eax
-  mov edx, var_E8
-  mov var_130, edx
-  jmp 0045E687h
-  call [004010ACh]
-  mov var_130, eax
-  mov eax, var_24
-  push eax
-  mov ecx, var_2C
-  push ecx
-  mov edx, var_38
-  mov eax, [edx+0000000Ch]
-  add eax, var_130
-  push eax
-  call 0043A7ECh ; CopyMemory(%x1v, %x2v, %x3v)
-  call [00401054h]
-  lea ecx, var_38
-  push ecx
-  call [004011C4h]
-  mov var_4, 00000017h
-  mov edx, var_28
-  push edx
-  lea eax, var_38
-  push eax
-  call [0040117Ch]
-  cmp var_38, 00000000h
-  jz 0045E71Ah
-  mov ecx, var_38
-  cmp [ecx], 0001h
-  jnz 0045E71Ah
-  mov edx, var_38
-  mov eax, 00000001h
-  sub eax, [edx+00000014h]
-  mov var_E8, eax
-  mov ecx, var_38
-  mov edx, var_E8
-  cmp edx, [ecx+00000010h]
-  jae 0045E700h
-  mov var_134, 00000000h
-  jmp 0045E70Ch
-  call [004010ACh]
-  mov var_134, eax
-  mov eax, var_E8
-  mov var_138, eax
-  jmp 0045E726h
-  call [004010ACh]
-  mov var_138, eax
-  mov ecx, var_38
-  mov edx, [ecx+0000000Ch]
-  add edx, var_138
-  mov var_A8, edx
-  mov var_B0, 00004011h
-  lea eax, var_B0
-  push eax
-  call [00401140h]
-  mov edx, eax
-  lea ecx, var_48
-  call [004011ACh]
-  lea ecx, var_38
-  push ecx
-  call [004011C4h]
-  mov edx, var_28
-  push edx
-  lea eax, var_3C
-  push eax
-  call [0040117Ch]
-  cmp var_3C, 00000000h
-  jz 0045E7C3h
-  mov ecx, var_3C
-  cmp [ecx], 0001h
-  jnz 0045E7C3h
-  mov edx, var_3C
-  xor eax, eax
-  sub eax, [edx+00000014h]
-  mov var_EC, eax
-  mov ecx, var_3C
-  mov edx, var_EC
-  cmp edx, [ecx+00000010h]
-  jae 0045E7A9h
-  mov var_13C, 00000000h
-  jmp 0045E7B5h
-  call [004010ACh]
-  mov var_13C, eax
-  mov eax, var_EC
-  mov var_140, eax
-  jmp 0045E7CFh
-  call [004010ACh]
-  mov var_140, eax
-  mov ecx, var_3C
-  mov edx, [ecx+0000000Ch]
-  add edx, var_140
-  mov var_B8, edx
-  mov var_C0, 00004011h
-  lea eax, var_C0
-  push eax
-  call [00401140h]
-  mov edx, eax
-  lea ecx, var_58
-  call [004011ACh]
-  lea ecx, var_3C
-  push ecx
-  call [004011C4h]
-  mov edx, var_28
-  push edx
-  lea eax, var_40
-  push eax
-  call [0040117Ch]
-  cmp var_40, 00000000h
-  jz 0045E86Fh
-  mov ecx, var_40
-  cmp [ecx], 0001h
-  jnz 0045E86Fh
-  mov edx, var_40
-  mov eax, 00000003h
-  sub eax, [edx+00000014h]
-  mov var_F0, eax
-  mov ecx, var_40
-  mov edx, var_F0
-  cmp edx, [ecx+00000010h]
-  jae 0045E855h
-  mov var_144, 00000000h
-  jmp 0045E861h
-  call [004010ACh]
-  mov var_144, eax
-  mov eax, var_F0
-  mov var_148, eax
-  jmp 0045E87Bh
-  call [004010ACh]
-  mov var_148, eax
-  mov ecx, var_40
-  mov edx, [ecx+0000000Ch]
-  add edx, var_148
-  mov var_C8, edx
-  mov var_D0, 00004011h
-  lea eax, var_D0
-  push eax
-  call [00401140h]
-  mov edx, eax
-  lea ecx, var_68
-  call [004011ACh]
-  lea ecx, var_40
-  push ecx
-  call [004011C4h]
-  mov edx, var_28
-  push edx
-  lea eax, var_44
-  push eax
-  call [0040117Ch]
-  cmp var_44, 00000000h
-  jz 0045E91Bh
-  mov ecx, var_44
-  cmp [ecx], 0001h
-  jnz 0045E91Bh
-  mov edx, var_44
-  mov eax, 00000002h
-  sub eax, [edx+00000014h]
-  mov var_F4, eax
-  mov ecx, var_44
-  mov edx, var_F4
-  cmp edx, [ecx+00000010h]
-  jae 0045E901h
-  mov var_14C, 00000000h
-  jmp 0045E90Dh
-  call [004010ACh]
-  mov var_14C, eax
-  mov eax, var_F4
-  mov var_150, eax
-  jmp 0045E927h
-  call [004010ACh]
-  mov var_150, eax
-  mov ecx, var_44
-  mov edx, [ecx+0000000Ch]
-  add edx, var_150
-  mov var_D8, edx
-  mov var_E0, 00004011h
-  lea eax, var_E0
-  push eax
-  call [00401140h]
-  mov edx, eax
-  lea ecx, var_7C
-  call [004011ACh]
-  lea ecx, var_44
-  push ecx
-  call [004011C4h]
-  push 00000002h
-  call [00401000h]
-  mov edx, eax
-  lea ecx, var_50
-  call [004011ACh]
-  mov edx, var_48
-  mov var_10C, edx
-  mov var_48, 00000000h
-  mov edx, var_10C
-  lea ecx, var_4C
-  call [004011ACh]
-  lea eax, var_54
-  push eax
-  lea ecx, var_50
-  push ecx
-  lea edx, var_4C
-  push edx
-  mov eax, Me
-  mov ecx, [eax]
-  mov edx, Me
-  push edx
-  call [ecx+00000098h]
-  push 00000002h
-  call [00401000h]
-  mov edx, eax
-  lea ecx, var_60
-  call [004011ACh]
-  mov eax, var_58
-  mov var_110, eax
-  mov var_58, 00000000h
-  mov edx, var_110
-  lea ecx, var_5C
-  call [004011ACh]
-  lea ecx, var_64
-  push ecx
-  lea edx, var_60
-  push edx
-  lea eax, var_5C
-  push eax
-  mov ecx, Me
-  mov edx, [ecx]
-  mov eax, Me
-  push eax
-  call [edx+00000098h]
-  push 00000002h
-  call [00401000h]
-  mov edx, eax
-  lea ecx, var_70
-  call [004011ACh]
-  mov ecx, var_68
-  mov var_114, ecx
-  mov var_68, 00000000h
-  mov edx, var_114
-  lea ecx, var_6C
-  call [004011ACh]
-  lea edx, var_74
-  push edx
-  lea eax, var_70
-  push eax
-  lea ecx, var_6C
-  push ecx
-  mov edx, Me
-  mov eax, [edx]
-  mov ecx, Me
-  push ecx
-  call [eax+00000098h]
-  push 00000002h
-  call [00401000h]
-  mov edx, eax
-  lea ecx, var_84
-  call [004011ACh]
-  mov edx, var_7C
-  mov var_118, edx
-  mov var_7C, 00000000h
-  mov edx, var_118
-  lea ecx, var_80
-  call [004011ACh]
-  lea eax, var_88
-  push eax
-  lea ecx, var_84
-  push ecx
-  lea edx, var_80
-  push edx
-  mov eax, Me
-  mov ecx, [eax]
-  mov edx, Me
-  push edx
-  call [ecx+00000098h]
-  mov eax, var_54
-  push eax
-  mov ecx, var_64
-  push ecx
-  call [00401044h]
-  mov edx, eax
-  lea ecx, var_78
-  call [004011ACh]
-  push eax
-  mov edx, var_74
-  push edx
-  call [00401044h]
-  mov edx, eax
-  lea ecx, var_8C
-  call [004011ACh]
-  push eax
-  mov eax, var_88
-  push eax
-  call [00401044h]
-  mov edx, eax
-  lea ecx, var_90
-  call [004011ACh]
-  mov edx, eax
-  mov ecx, Me
-  add ecx, 00000040h
-  call [00401148h]
-  lea ecx, var_90
-  push ecx
-  lea edx, var_88
-  push edx
-  lea eax, var_8C
-  push eax
-  lea ecx, var_84
-  push ecx
-  lea edx, var_80
-  push edx
-  lea eax, var_74
-  push eax
-  lea ecx, var_78
-  push ecx
-  lea edx, var_70
-  push edx
-  lea eax, var_6C
-  push eax
-  lea ecx, var_64
-  push ecx
-  lea edx, var_54
-  push edx
-  lea eax, var_60
-  push eax
-  lea ecx, var_5C
-  push ecx
-  lea edx, var_50
-  push edx
-  lea eax, var_4C
-  push eax
-  push 0000000Fh
-  call [00401150h]
-  add esp, 00000040h
-  mov var_4, 00000018h
-  mov ecx, Me
-  mov edx, [ecx+00000040h]
-  push edx
-  push 0043A9A8h ; "00000000"
-  call [004010B0h]
-  test eax, eax
-  jnz 0045EB86h
-  mov var_4, 00000019h
-  mov edx, 0043A9C0h ; "040904E4"
-  mov ecx, Me
-  add ecx, 00000040h
-  call [00401148h]
-  mov var_4, 0000001Bh
-  mov eax, Me
-  mov ecx, [eax+0000003Ch]
-  push ecx
-  lea edx, var_38
-  push edx
-  call [0040117Ch]
-  cmp var_38, 00000000h
-  jz 0045EBEFh
-  mov eax, var_38
-  cmp [eax], 0001h
-  jnz 0045EBEFh
-  mov ecx, var_38
-  xor edx, edx
-  sub edx, [ecx+00000014h]
-  mov var_E8, edx
-  mov eax, var_38
-  mov ecx, var_E8
-  cmp ecx, [eax+00000010h]
-  jae 0045EBD5h
-  mov var_154, 00000000h
-  jmp 0045EBE1h
-  call [004010ACh]
-  mov var_154, eax
-  mov edx, var_E8
-  mov var_158, edx
-  jmp 0045EBFBh
-  call [004010ACh]
-  mov var_158, eax
-  lea eax, var_24
-  push eax
-  lea ecx, var_2C
-  push ecx
-  push 00418DA4h ; "\"
-  lea edx, var_48
-  push edx
-  call [00401188h]
-  push eax
-  mov eax, var_38
-  mov ecx, [eax+0000000Ch]
-  add ecx, var_158
-  push ecx
-  call 0043A760h ; VerQueryValue(%x1v, %x2v, %x3v, %x4v)
-  mov var_E4, eax
-  call [00401054h]
-  lea edx, var_38
-  push edx
-  call [004011C4h]
-  xor eax, eax
-  cmp var_E4, 00000000h
-  setz al
-  neg eax
-  mov var_EC, ax
-  lea ecx, var_48
-  call [004011CCh]
-  mov var_4, 0000001Dh
-  mov edx, var_24
-  push edx
-  mov eax, var_2C
-  push eax
-  mov ecx, Me
-  add ecx, 00000044h
-  push ecx
-  call 0043A7ECh ; CopyMemory(%x1v, %x2v, %x3v)
-  call [00401054h]
-  push 0045ED29h
-  jmp 0045ED1Ch
-  lea edx, var_38
-  push edx
-  call [004011C4h]
-  lea eax, var_3C
-  push eax
-  call [004011C4h]
-  lea ecx, var_40
-  push ecx
-  call [004011C4h]
-  lea edx, var_44
-  push edx
-  call [004011C4h]
-  lea eax, var_90
-  push eax
-  lea ecx, var_8C
-  push ecx
-  lea edx, var_88
-  push edx
-  lea eax, var_84
-  push eax
-  lea ecx, var_80
-  push ecx
-  lea edx, var_7C
-  push edx
-  lea eax, var_78
-  push eax
-  lea ecx, var_74
-  push ecx
-  lea edx, var_70
-  push edx
-  lea eax, var_6C
-  push eax
-  lea ecx, var_68
-  push ecx
-  lea edx, var_64
-  push edx
-  lea eax, var_60
-  push eax
-  lea ecx, var_5C
-  push ecx
-  lea edx, var_58
-  push edx
-  lea eax, var_54
-  push eax
-  lea ecx, var_50
-  push ecx
-  lea edx, var_4C
-  push edx
-  lea eax, var_48
-  push eax
-  push 00000013h
-  call [00401150h]
-  add esp, 00000050h
-  lea ecx, var_A0
-  call [00401014h]
-  ret
-  lea ecx, var_28
-  push ecx
-  push 00000000h
-  call [00401068h]
-  ret
-  xor eax, eax
-  mov ecx, var_20
-  mov fs:[00000000h], ecx
-  pop edi
-  pop esi
-  pop ebx
-  mov esp, ebp
-  pop ebp
-  retn 0004h
+Private Sub Proc_4_29_45E210
+  loc_0045E216: ext_4010EC
+  loc_0045E22E: ext_40109C
+  loc_0045E25E: call var_8004 = global_00401070(FFFFFFFFh, 0, 0, 0)
+  loc_0045E272: call var_8008 = global_00401018(global_52)
+  loc_0045E27A: If var_8008 > 0 Then
+  loc_0045E292:   call var_800C = global_00401188(var_48, global_52)
+  loc_0045E2A4:   call var_8014 = global_00401054
+  loc_0045E2B5:   call var_8018 = global_004010F4(global_52, var_48)
+  loc_0045E2C7:   call var_801C = global_004011CC
+  loc_0045E2E7:   call var_8020 = global_004010A4(var_A0, 00000104h)
+  loc_0045E2F4:   call var_8024 = global_0040101C(var_A0)
+  loc_0045E2FF:   call var_8028 = global_004011AC
+  loc_0045E30D:   call var_802C = global_00401148
+  loc_0045E316:   call var_8030 = global_004011CC
+  loc_0045E322:   call var_8034 = global_00401014
+  loc_0045E336:   call var_8038 = global_00401018(global_56)
+  loc_0045E348:   call var_803C = global_00401188(var_48, global_56, var_8038)
+  loc_0045E35E:   call var_8044 = global_00401054
+  loc_0045E36F:   call var_8048 = global_004010F4(global_56, var_48)
+  loc_0045E383:   var_E8 = (GetModuleFileName(GetModuleHandle(var_800C), var_803C, ) = 0)
+  loc_0045E38D:   call var_804C = global_004011CC
+  loc_0045E393: End If
+  loc_0045E3A1: call var_8050 = global_00401018(global_56)
+  loc_0045E3BD: call var_8054 = global_00401188(var_48, global_56, var_34)
+  loc_0045E3CF: call var_805C = global_00401054
+  loc_0045E3E0: call var_8060 = global_004010F4(global_56, var_48)
+  loc_0045E3EC: var_24 = GetFileVersionInfoSize(var_8054, )
+  loc_0045E3F2: call var_8064 = global_004011CC
+  loc_0045E427: call var_8068 = global_004010D0(00000080h, 00000001h, global_60, 00000011h, 00000001h, var_24(-1), 00000000h)
+  loc_0045E442: call var_806C = global_0040117C(var_38, global_60)
+  loc_0045E44C: If var_38 Then
+  loc_0045E455:   If var_38 = 1 Then
+  loc_0045E45F:     var_E8 = (eax - var_38(20))
+  loc_0045E471:     If var_E8 < 0 Then
+  loc_0045E47F:     Else
+  loc_0045E47F:       call var_8070 = global_004010AC
+  loc_0045E485:       var_11C = var_8070
+  loc_0045E48B:     End If
+  loc_0045E491:     var_120 = var_E8
+  loc_0045E499:   Else
+  loc_0045E499:   End If
+  loc_0045E499:   call var_8074 = global_004010AC
+  loc_0045E49F:   var_120 = var_8074
+  loc_0045E4A5: End If
+  loc_0045E4AB: var_38(12) = var_38(12) + var_120
+  loc_0045E4C3: call var_8078 = global_00401188(var_48, global_56, 00000000h, var_24, var_38(12)+var_120)
+  loc_0045E4D5: call var_8080 = global_00401054
+  loc_0045E4E6: call var_8084 = global_004010F4(global_56, var_48)
+  loc_0045E4F0: call var_8088 = global_004011C4(var_38)
+  loc_0045E504: var_EC = (GetFileVersionInfo(var_8078, , , ) = 0)
+  loc_0045E50E: call var_808C = global_004011CC
+  loc_0045E526: call var_8090 = global_0040117C(var_38, global_60)
+  loc_0045E530: If var_38 Then
+  loc_0045E539:   If var_38 = 1 Then
+  loc_0045E543:     var_E8 = (edx - var_38(20))
+  loc_0045E555:     If var_E8 < 0 Then
+  loc_0045E563:     Else
+  loc_0045E563:       call var_8094 = global_004010AC
+  loc_0045E569:       var_124 = var_8094
+  loc_0045E56F:     End If
+  loc_0045E575:     var_128 = var_E8
+  loc_0045E57D:   Else
+  loc_0045E57D:   End If
+  loc_0045E57D:   call var_8098 = global_004010AC
+  loc_0045E583:   var_128 = var_8098
+  loc_0045E589: End If
+  loc_0045E59A: call var_809C = global_00401188(var_48, "\VarFileInfo\Translation", var_2C, var_24)
+  loc_0045E5A7: var_38(12) = var_38(12) + var_128
+  loc_0045E5B9: call var_80A4 = global_00401054
+  loc_0045E5C3: call var_80A8 = global_004011C4(var_38)
+  loc_0045E5D7: var_EC = (VerQueryValue(var_38(12)+var_128, var_809C, , ) = 0)
+  loc_0045E5E1: call var_80AC = global_004011CC
+  loc_0045E60C: call var_80B0 = global_004010D0(00000080h, 00000001h, var_28, 00000011h, 00000001h, var_24(-1), 00000000h)
+  loc_0045E624: call var_80B4 = global_0040117C(var_38, var_28)
+  loc_0045E62E: If var_38 Then
+  loc_0045E637:   If var_38 = 1 Then
+  loc_0045E641:     var_E8 = (edx - var_38(20))
+  loc_0045E653:     If var_E8 < 0 Then
+  loc_0045E661:     Else
+  loc_0045E661:       call var_80B8 = global_004010AC
+  loc_0045E667:       var_12C = var_80B8
+  loc_0045E66D:     End If
+  loc_0045E673:     var_130 = var_E8
+  loc_0045E67B:   Else
+  loc_0045E67B:   End If
+  loc_0045E67B:   call var_80BC = global_004010AC
+  loc_0045E681:   var_130 = var_80BC
+  loc_0045E687: End If
+  loc_0045E695: var_38(12) = var_38(12) + var_130
+  loc_0045E69C: var_80C0 = CopyMemory(var_38(12)+var_130, var_2C, var_24)
+  loc_0045E6A1: call var_80C4 = global_00401054
+  loc_0045E6AB: call var_80C8 = global_004011C4(var_38)
+  loc_0045E6C0: call var_80CC = global_0040117C(var_38, var_28)
+  loc_0045E6CA: If var_38 Then
+  loc_0045E6D3:   If var_38 = 1 Then
+  loc_0045E6E0:     var_E8 = (eax - var_38(20))
+  loc_0045E6F2:     If var_E8 < 0 Then
+  loc_0045E700:     Else
+  loc_0045E700:       call var_80D0 = global_004010AC
+  loc_0045E706:       var_134 = var_80D0
+  loc_0045E70C:     End If
+  loc_0045E712:     var_138 = var_E8
+  loc_0045E71A:   Else
+  loc_0045E71A:   End If
+  loc_0045E71A:   call var_80D4 = global_004010AC
+  loc_0045E720:   var_138 = var_80D4
+  loc_0045E726: End If
+  loc_0045E72C: var_38(12) = var_38(12) + var_138
+  loc_0045E732: var_A8 = var_38(12)+var_138
+  loc_0045E749: call var_80D8 = global_00401140(&H4011)
+  loc_0045E754: call var_80DC = global_004011AC
+  loc_0045E75E: call var_80E0 = global_004011C4(var_38)
+  loc_0045E76C: call var_80E4 = global_0040117C(var_3C, var_28)
+  loc_0045E776: If var_3C Then
+  loc_0045E77F:   If var_3C = 1 Then
+  loc_0045E789:     var_EC = (eax - var_3C(20))
+  loc_0045E79B:     If var_EC < 0 Then
+  loc_0045E7A9:     Else
+  loc_0045E7A9:       call var_80E8 = global_004010AC
+  loc_0045E7AF:       var_13C = var_80E8
+  loc_0045E7B5:     End If
+  loc_0045E7BB:     var_140 = var_EC
+  loc_0045E7C3:   Else
+  loc_0045E7C3:   End If
+  loc_0045E7C3:   call var_80EC = global_004010AC
+  loc_0045E7C9:   var_140 = var_80EC
+  loc_0045E7CF: End If
+  loc_0045E7D5: var_3C(12) = var_3C(12) + var_140
+  loc_0045E7DB: var_B8 = var_3C(12)+var_140
+  loc_0045E7F2: call var_80F0 = global_00401140(&H4011)
+  loc_0045E7FD: call var_80F4 = global_004011AC
+  loc_0045E807: call var_80F8 = global_004011C4(var_3C)
+  loc_0045E815: call var_80FC = global_0040117C(var_40, var_28)
+  loc_0045E81F: If var_40 Then
+  loc_0045E828:   If var_40 = 1 Then
+  loc_0045E835:     var_F0 = (eax - var_40(20))
+  loc_0045E847:     If var_F0 < 0 Then
+  loc_0045E855:     Else
+  loc_0045E855:       call var_8100 = global_004010AC
+  loc_0045E85B:       var_144 = var_8100
+  loc_0045E861:     End If
+  loc_0045E867:     var_148 = var_F0
+  loc_0045E86F:   Else
+  loc_0045E86F:   End If
+  loc_0045E86F:   call var_8104 = global_004010AC
+  loc_0045E875:   var_148 = var_8104
+  loc_0045E87B: End If
+  loc_0045E881: var_40(12) = var_40(12) + var_148
+  loc_0045E887: var_C8 = var_40(12)+var_148
+  loc_0045E89E: call var_8108 = global_00401140(&H4011)
+  loc_0045E8A9: call var_810C = global_004011AC
+  loc_0045E8B3: call var_8110 = global_004011C4(var_40)
+  loc_0045E8C1: call var_8114 = global_0040117C(var_44, var_28)
+  loc_0045E8CB: If var_44 Then
+  loc_0045E8D4:   If var_44 = 1 Then
+  loc_0045E8E1:     var_F4 = (eax - var_44(20))
+  loc_0045E8F3:     If var_F4 < 0 Then
+  loc_0045E901:     Else
+  loc_0045E901:       call var_8118 = global_004010AC
+  loc_0045E907:       var_14C = var_8118
+  loc_0045E90D:     End If
+  loc_0045E913:     var_150 = var_F4
+  loc_0045E91B:   Else
+  loc_0045E91B:   End If
+  loc_0045E91B:   call var_811C = global_004010AC
+  loc_0045E921:   var_150 = var_811C
+  loc_0045E927: End If
+  loc_0045E92D: var_44(12) = var_44(12) + var_150
+  loc_0045E933: var_D8 = var_44(12)+var_150
+  loc_0045E94A: call var_8120 = global_00401140(&H4011)
+  loc_0045E955: call var_8124 = global_004011AC
+  loc_0045E95F: call var_8128 = global_004011C4(var_44)
+  loc_0045E967: call var_812C = global_00401000(00000002h)
+  loc_0045E972: call var_8130 = global_004011AC
+  loc_0045E97B: var_10C = var_48
+  loc_0045E991: call var_8134 = global_004011AC
+  loc_0045E9AC: var_8138 = VersionInfo.Proc_4_31_45EEA0(var_4C)
+  loc_0045E9B4: call var_813C = global_00401000(00000002h, var_50, var_54)
+  loc_0045E9BF: call var_8140 = global_004011AC
+  loc_0045E9C8: var_110 = var_58
+  loc_0045E9DE: call var_8144 = global_004011AC
+  loc_0045E9F9: var_8148 = VersionInfo.Proc_4_31_45EEA0(var_5C)
+  loc_0045EA01: call var_814C = global_00401000(00000002h, var_60, var_64)
+  loc_0045EA0C: call var_8150 = global_004011AC
+  loc_0045EA15: var_114 = var_68
+  loc_0045EA2B: call var_8154 = global_004011AC
+  loc_0045EA46: var_8158 = VersionInfo.Proc_4_31_45EEA0(var_6C)
+  loc_0045EA4E: call var_815C = global_00401000(00000002h, var_70, var_74)
+  loc_0045EA5C: call var_8160 = global_004011AC
+  loc_0045EA65: var_118 = var_7C
+  loc_0045EA7B: call var_8164 = global_004011AC
+  loc_0045EA9C: var_8168 = VersionInfo.Proc_4_31_45EEA0(var_80)
+  loc_0045EAAA: call var_816C = global_00401044(var_64, var_54, var_84, var_88)
+  loc_0045EAB5: call var_8170 = global_004011AC
+  loc_0045EAC0: call var_8174 = global_00401044(var_74, var_8170)
+  loc_0045EACE: call var_8178 = global_004011AC
+  loc_0045EADC: call var_817C = global_00401044(var_88, var_8178)
+  loc_0045EAEA: call var_8180 = global_004011AC
+  loc_0045EAF8: call var_8184 = global_00401148
+  loc_0045EB48: call var_8188 = global_00401150(0000000Fh, var_4C, var_50, var_5C, var_60, var_54, var_64, var_6C, var_70, var_78, var_74, var_80, var_84, var_8C, var_88, var_90)
+  loc_0045EB64: call var_818C = global_004010B0("00000000", global_64)
+  loc_0045EB6C: If var_818C = 0 Then
+  loc_0045EB80:   call var_8190 = global_00401148
+  loc_0045EB86: End If
+  loc_0045EB98: call var_8194 = global_0040117C(var_38, global_60)
+  loc_0045EBA2: If var_38 Then
+  loc_0045EBAB:   If var_38 = 1 Then
+  loc_0045EBB5:     var_E8 = (edx - var_38(20))
+  loc_0045EBC7:     If var_E8 < 0 Then
+  loc_0045EBD5:     Else
+  loc_0045EBD5:       call var_8198 = global_004010AC
+  loc_0045EBDB:       var_154 = var_8198
+  loc_0045EBE1:     End If
+  loc_0045EBE7:     var_158 = var_E8
+  loc_0045EBEF:   Else
+  loc_0045EBEF:   End If
+  loc_0045EBEF:   call var_819C = global_004010AC
+  loc_0045EBF5:   var_158 = var_819C
+  loc_0045EBFB: End If
+  loc_0045EC0C: call var_81A0 = global_00401188(var_48, "\", var_2C, var_24)
+  loc_0045EC19: var_38(12) = var_38(12) + var_158
+  loc_0045EC2B: call var_81A8 = global_00401054
+  loc_0045EC35: call var_81AC = global_004011C4(var_38)
+  loc_0045EC49: var_EC = (VerQueryValue(var_38(12)+var_158, var_81A0, , ) = 0)
+  loc_0045EC53: call var_81B0 = global_004011CC
+  loc_0045EC6F: var_81B4 = CopyMemory(global_68, var_2C, var_24)
+  loc_0045EC74: call var_81B8 = global_00401054
+  loc_0045EC7F: GoTo loc_0045ED1C
+  loc_0045EC88: call var_81BC = global_004011C4(var_38, global_0045ED29)
+  loc_0045EC92: call var_81C0 = global_004011C4(var_3C)
+  loc_0045EC9C: call var_81C4 = global_004011C4(var_40)
+  loc_0045ECA6: call var_81C8 = global_004011C4(var_44)
+  loc_0045ED06: call var_81CC = global_00401150(00000013h, var_48, var_4C, var_50, var_54, var_58, var_5C, var_60, var_64, var_68, var_6C, var_70, var_74, var_78, var_7C, var_80)
+  loc_0045ED15: call var_81D0 = global_00401014
+  loc_0045ED1B: Exit Sub
+  loc_0045ED1C: ' Referenced from: 0045EC7F
+  loc_0045ED22: call var_81D4 = global_00401068(00000000h, var_28)
 End Sub
 
-Private Sub Proc_4_30_45ED50(arg_C, arg_10) '45ED50
-  push ebp
-  mov ebp, esp
-  sub esp, 00000018h
-  push 00403896h ; ext_4010EC
-  mov eax, fs:[00000000h]
-  push eax
-  mov fs:[00000000h], esp
-  mov eax, 00000020h
-  call 00403890h ; ext_40109C
-  push ebx
-  push esi
-  push edi
-  mov var_18, esp
-  mov var_14, 00403808h
-  mov var_10, 00000000h
-  mov var_C, 00000000h
-  mov var_4, 00000001h
-  mov eax, arg_10
-  mov [eax], 00000000h
-  mov var_4, 00000002h
-  push FFFFFFFFh
-  call [00401070h]
-  mov var_4, 00000003h
-  push 00000001h
-  mov ecx, arg_C
-  mov edx, [ecx]
-  push edx
-  push 0043A9D8h
-  push 00000000h
-  call [00401130h]
-  mov ecx, eax
-  call [004010BCh]
-  mov var_28, ax
-  mov var_4, 00000004h
-  mov ax, var_28
-  mov var_2C, ax
-  mov var_4, 00000005h
-  cmp var_2C, 0001h
-  jle 0045EE24h
-  mov var_4, 00000006h
-  mov cx, var_28
-  sub cx, 0001h
-  jo 0045EE99h
-  movsx edx, cx
-  push edx
-  mov eax, arg_C
-  mov ecx, [eax]
-  push ecx
-  call [0040119Ch]
-  mov edx, eax
-  lea ecx, var_24
-  call [004011ACh]
-  jmp 0045EE6Ah
-  mov var_4, 00000007h
-  movsx edx, var_2C
-  test edx, edx
-  jnz 0045EE4Ah
-  mov var_4, 00000008h
-  mov eax, arg_C
-  mov edx, [eax]
-  lea ecx, var_24
-  call [00401148h]
-  jmp 0045EE6Ah
-  mov var_4, 00000009h
-  cmp var_2C, 0001h
-  jnz 0045EE6Ah
-  mov var_4, 0000000Ah
-  xor edx, edx
-  lea ecx, var_24
-  call [00401148h]
-  push 0045EE7Ch
-  jmp 0045EE7Bh
-  lea ecx, var_24
-  call [004011CCh]
-  ret
-  ret
-  mov ecx, arg_10
-  mov edx, var_24
-  mov [ecx], edx
-  xor eax, eax
-  mov ecx, var_20
-  mov fs:[00000000h], ecx
-  pop edi
-  pop esi
-  pop ebx
-  mov esp, ebp
-  pop ebp
-  retn 000Ch
+Private  Proc_4_30_45ED50(arg_C) '45ED50
+  loc_0045ED56: ext_4010EC
+  loc_0045ED6E: ext_40109C
+  loc_0045EDA7: call var_8004 = global_00401070(FFFFFFFFh, 0, 0, 0)
+  loc_0045EDC3: call var_8008 = global_00401130(00000000h, global_0043A9D8, arg_C, 00000001h)
+  loc_0045EDCB: call var_800C = global_004010BC
+  loc_0045EDD1: var_28 = var_800C
+  loc_0045EDF0: If var_28 > 1 Then
+  loc_0045EE11:   call var_8010 = global_0040119C(arg_C, (var_28 - 1))
+  loc_0045EE1C:   call var_8014 = global_004011AC
+  loc_0045EE24: Else
+  loc_0045EE31:   If var_2C = 0 Then
+  loc_0045EE42:     call var_8018 = global_00401148
+  loc_0045EE4A:   Else
+  loc_0045EE56:     If var_2C = 1 Then
+  loc_0045EE64:       call var_801C = global_00401148
+  loc_0045EE6A:     End If
+  loc_0045EE6A:   End If
+  loc_0045EE6A: End If
+  loc_0045EE6F: GoTo loc_0045EE7B
+  loc_0045EE74: call var_8020 = global_004011CC(global_0045EE7C)
+  loc_0045EE7A: Exit Sub
+  loc_0045EE7B: ' Referenced from: 0045EE6F
 End Sub
 
-Private Function Proc_4_31_45EEA0(arg_C, arg_10, arg_14) '45EEA0
-  push ebp
-  mov ebp, esp
-  sub esp, 00000018h
-  push 00403896h ; ext_4010EC
-  mov eax, fs:[00000000h]
-  push eax
-  mov fs:[00000000h], esp
-  mov eax, 0000006Ch
-  call 00403890h ; ext_40109C
-  push ebx
-  push esi
-  push edi
-  mov var_18, esp
-  mov var_14, 00403858h
-  mov var_10, 00000000h
-  mov var_C, 00000000h
-  mov var_4, 00000001h
-  mov eax, arg_14
-  mov [eax], 00000000h
-  mov var_4, 00000002h
-  push FFFFFFFFh
-  call [00401070h]
-  mov var_4, 00000003h
-  mov var_60, 0041C1DCh
-  mov var_68, 00000008h
-  lea edx, var_68
-  lea ecx, var_38
-  call [0040118Ch]
-  lea ecx, var_38
-  push ecx
-  mov edx, arg_10
-  mov eax, [edx]
-  push eax
-  call [0040114Ch]
-  push eax
-  lea ecx, var_48
-  push ecx
-  call [00401100h]
-  mov edx, arg_C
-  mov eax, [edx]
-  mov var_70, eax
-  mov var_78, 00000008h
-  mov ecx, arg_10
-  mov edx, [ecx]
-  push edx
-  call [0040114Ch]
-  push eax
-  lea eax, var_48
-  push eax
-  lea ecx, var_78
-  push ecx
-  lea edx, var_58
-  push edx
-  call [0040111Ch]
-  push eax
-  lea eax, var_28
-  push eax
-  call [00401118h]
-  push eax
-  call [004011B0h]
-  mov edx, eax
-  lea ecx, var_24
-  call [004011ACh]
-  lea ecx, var_28
-  call [004011CCh]
-  lea ecx, var_58
-  push ecx
-  lea edx, var_48
-  push edx
-  lea eax, var_38
-  push eax
-  push 00000003h
-  call [00401024h]
-  add esp, 00000010h
-  push 0045EFE0h
-  jmp 0045EFDFh
-  mov ecx, var_10
-  and ecx, 00000004h
-  test ecx, ecx
-  jz 0045EFBEh
-  lea ecx, var_24
-  call [004011CCh]
-  lea ecx, var_28
-  call [004011CCh]
-  lea edx, var_58
-  push edx
-  lea eax, var_48
-  push eax
-  lea ecx, var_38
-  push ecx
-  push 00000003h
-  call [00401024h]
-  add esp, 00000010h
-  ret
-  ret
-  mov edx, arg_14
-  mov eax, var_24
-  mov [edx], eax
-  xor eax, eax
-  mov ecx, var_20
-  mov fs:[00000000h], ecx
-  pop edi
-  pop esi
-  pop ebx
-  mov esp, ebp
-  pop ebp
-  retn 0010h
-End Function
+Private  Proc_4_31_45EEA0(arg_C, arg_10) '45EEA0
+  loc_0045EEA6: ext_4010EC
+  loc_0045EEBE: ext_40109C
+  loc_0045EEF7: call var_8004 = global_00401070(FFFFFFFFh, 0, 0, 0)
+  loc_0045EF04: var_60 = global_0041C1DC
+  loc_0045EF18: call var_8008 = global_0040118C
+  loc_0045EF28: call var_800C = global_0040114C(arg_10, var_38)
+  loc_0045EF33: call var_8010 = global_00401100(var_48, var_800C)
+  loc_0045EF3E: var_70 = arg_C
+  loc_0045EF4E: call var_8014 = global_0040114C(arg_10)
+  loc_0045EF61: call var_8018 = global_0040111C(var_58, 8, var_48, var_8014)
+  loc_0045EF6C: call var_801C = global_00401118(var_28, var_8018)
+  loc_0045EF73: call var_8020 = global_004011B0(var_801C)
+  loc_0045EF7E: call var_8024 = global_004011AC
+  loc_0045EF87: call var_8028 = global_004011CC
+  loc_0045EF9B: call var_802C = global_00401024(00000003h, var_38, var_48, var_58)
+  loc_0045EFA9: GoTo loc_0045EFDF
+  loc_0045EFB3: If (0 And 4) Then
+  loc_0045EFB8:   call var_8030 = global_004011CC(global_0045EFE0)
+  loc_0045EFBE: End If
+  loc_0045EFC1: call var_8034 = global_004011CC
+  loc_0045EFD5: call var_8038 = global_00401024(00000003h, var_38, var_48, var_58)
+  loc_0045EFDE: Exit Sub
+  loc_0045EFDF: ' Referenced from: 0045EFA9
+End Sub

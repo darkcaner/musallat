@@ -40,6 +40,6 @@ MaxNumberOfThreads = 1
 AutoRefresh = 1
 
 [VB Decompiler]
-Build = 12.5.9167.30901
-Date = 18.04.2025
+Build = 11.5.7492.44943
+Date = 19.04.2025
 

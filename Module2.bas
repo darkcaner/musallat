@@ -1,437 +1,103 @@
 
-Private Sub Proc_2_0_45BA20() '45BA20
-  push ebp
-  mov ebp, esp
-  sub esp, 00000008h
-  push 00403896h ; ext_4010EC
-  mov eax, fs:[00000000h]
-  push eax
-  mov fs:[00000000h], esp
-  sub esp, 0000004Ch
-  push ebx
-  push esi
-  push edi
-  mov var_8, esp
-  mov var_4, 00402FF0h
-  xor eax, eax
-  xor ecx, ecx
-  mov var_20, eax
-  mov var_30, ecx
-  mov var_1C, eax
-  mov var_2C, ecx
-  xor edx, edx
-  mov var_18, eax
-  mov var_28, ecx
-  xor ebx, ebx
-  mov var_3C, edx
-  mov var_14, eax
-  mov var_24, ecx
-  mov var_34, ebx
-  mov var_38, edx
-  mov var_44, ebx
-  mov var_48, ebx
-  mov var_4C, ebx
-  call 00419120h ; GetCurrentProcess()
-  mov esi, [00401054h]
-  mov edi, eax
-  call global_00401054
-  lea eax, var_34
-  push eax
-  push 00000028h
-  push edi
-  call 004190D4h ; OpenProcessToken(%x1v, %x2v, %x3v)
-  mov edi, eax
-  call global_00401054
-  cmp edi, ebx
-  jz 0045BB1Ch
-  mov edi, arg_8
-  lea ecx, var_3C
-  push ecx
-  lea eax, var_4C
-  mov edx, [edi]
-  push edx
-  push eax
-  call [00401188h]
-  push eax
-  push ebx
-  call 00419084h ; LookupPrivilegeValue(%x1v, %x2v, %x3v)
-  mov ebx, eax
-  call global_00401054
-  mov ecx, var_4C
-  push ecx
-  push edi
-  call [004010F4h]
-  lea ecx, var_4C
-  call [004011CCh]
-  test ebx, ebx
-  jz 0045BB1Ch
-  lea edx, var_3C
-  lea eax, var_2C
-  push edx
-  push eax
-  push 00000008h
-  mov var_30, 00000001h
-  mov var_24, 00000002h
-  call [00401040h]
-  lea ecx, var_48
-  lea edx, var_20
-  push ecx
-  mov ecx, var_34
-  push edx
-  lea eax, var_30
-  push 00000010h
-  push eax
-  push 00000000h
-  push ecx
-  call 00419034h ; AdjustTokenPrivileges(%x1v, %x2v, %x3v, %x4v, %x5v, %x6v)
-  mov edi, eax
-  call global_00401054
-  xor edx, edx
-  test edi, edi
-  setnz dl
-  neg edx
-  mov var_44, edx
-  push 0045BB2Eh
-  jmp 0045BB2Dh
-  lea ecx, var_4C
-  call [004011CCh]
-  ret
-  ret
-  mov ecx, var_10
-  mov ax, var_44
-  pop edi
-  pop esi
-  mov fs:[00000000h], ecx
-  pop ebx
-  mov esp, ebp
-  pop ebp
-  retn 0004h
+Private Sub Proc_2_0_45BA20
+  loc_0045BA26: ext_4010EC
+  loc_0045BA88: call var_8008 = global_00401054(0, 0)
+  loc_0045BA98: call var_8010 = global_00401054
+  loc_0045BA9C: If OpenProcessToken(GetCurrentProcess(0), 40, var_34) Then
+  loc_0045BAAC:   call var_8014 = global_00401188(var_4C, Me, var_3C)
+  loc_0045BABB:   call var_801C = global_00401054
+  loc_0045BAC2:   call var_8020 = global_004010F4(Me, var_4C)
+  loc_0045BACB:   call var_8024 = global_004011CC
+  loc_0045BAD3:   If LookupPrivilegeValue(0, var_8014, ) Then
+  loc_0045BAED:     call var_8028 = global_00401040(00000008h, var_2C, var_3C)
+  loc_0045BB0E:     call var_8030 = global_00401054
+  loc_0045BB19:     var_44 = (AdjustTokenPrivileges(var_34, 0, 1, 16, var_20, var_48))
+  loc_0045BB1C:   End If
+  loc_0045BB1C: End If
+  loc_0045BB21: GoTo loc_0045BB2D
+  loc_0045BB26: call var_8034 = global_004011CC(global_0045BB2E)
+  loc_0045BB2C: Exit Sub
+  loc_0045BB2D: ' Referenced from: 0045BB21
 End Sub
 
-Private Function Proc_2_1_45BB50(arg_C, arg_10, arg_14, arg_18) '45BB50
-  push ebp
-  mov ebp, esp
-  sub esp, 0000000Ch
-  push 00403896h ; ext_4010EC
-  mov eax, fs:[00000000h]
-  push eax
-  mov fs:[00000000h], esp
-  sub esp, 00000048h
-  push ebx
-  push esi
-  push edi
-  mov var_C, esp
-  mov var_8, 00403000h
-  mov edi, [00401170h]
-  lea eax, var_24
-  xor esi, esi
-  push eax
-  mov var_24, esi
-  mov var_34, esi
-  mov var_38, esi
-  mov var_48, esi
-  mov var_4C, esi
-  call edi
-  mov edx, arg_10
-  lea ecx, var_4C
-  mov var_4C, eax
-  push ecx
-  mov eax, [edx]
-  push 00020006h
-  push esi
-  lea ecx, var_38
-  push eax
-  push ecx
-  call [00401188h]
-  mov edx, arg_C
-  push eax
-  mov eax, [edx]
-  push eax
-  call 00418F58h ; RegOpenKeyEx(%x1v, %x2v, %x3v, %x4v, %x5v)
-  mov ebx, [00401054h]
-  mov var_50, eax
-  call ebx
-  mov ecx, var_38
-  mov edx, arg_10
-  push ecx
-  push edx
-  call [004010F4h]
-  mov eax, var_4C
-  lea edx, var_48
-  lea ecx, var_24
-  mov var_40, eax
-  mov var_48, 00000003h
-  call [00401194h]
-  mov eax, var_50
-  xor ecx, ecx
-  cmp eax, esi
-  setz cl
-  neg ecx
-  mov var_54, ecx
-  lea ecx, var_38
-  call [004011CCh]
-  cmp var_54, si
-  jz 0045BC74h
-  mov edx, arg_18
-  mov eax, arg_14
-  push 00000004h
-  push edx
-  mov ecx, [eax]
-  push 00000004h
-  push esi
-  lea edx, var_38
-  push ecx
-  push edx
-  call [00401188h]
-  push eax
-  lea eax, var_24
-  push eax
-  call edi
-  push eax
-  call 00418FA0h ; RegSetValueEx(%x1v, %x2v, %x3v, %x4v, %x5v, %x6v)
-  mov var_4C, eax
-  call ebx
-  mov ecx, var_38
-  mov edx, arg_14
-  push ecx
-  push edx
-  call [004010F4h]
-  mov edx, var_4C
-  xor eax, eax
-  cmp edx, esi
-  lea ecx, var_38
-  setz al
-  neg eax
-  mov var_54, eax
-  call [004011CCh]
-  cmp var_54, si
-  jz 0045BC74h
-  lea ecx, var_24
-  push ecx
-  call edi
-  push eax
-  call 00418FE4h ; RegCloseKey(%x1v)
-  call ebx
-  push 0045BC9Eh
-  jmp 0045BC94h
-  test var_4, 04h
-  jz 0045BC8Ah
-  lea ecx, var_34
-  call [00401014h]
-  lea ecx, var_38
-  call [004011CCh]
-  ret
-  lea ecx, var_24
-  call [00401014h]
-  ret
-  mov eax, arg_8
-  mov ecx, var_34
-  mov edx, eax
-  pop edi
-  pop esi
-  pop ebx
-  mov [edx], ecx
-  mov ecx, var_30
-  mov [edx+00000004h], ecx
-  mov ecx, var_2C
-  mov [edx+00000008h], ecx
-  mov ecx, var_28
-  mov [edx+0000000Ch], ecx
-  mov ecx, var_14
-  mov fs:[00000000h], ecx
-  mov esp, ebp
-  pop ebp
-  retn 0014h
-End Function
+Private  Proc_2_1_45BB50(arg_C, arg_10, arg_14, arg_18) '45BB50
+  loc_0045BB56: ext_4010EC
+  loc_0045BB94: call var_8004 = global_00401170(var_24, 0, 0, 0)
+  loc_0045BB9C: var_4C = var_8004
+  loc_0045BBAD: call var_8008 = global_00401188(var_38, arg_10, 0, 00020006h, var_4C)
+  loc_0045BBC8: call var_8010 = global_00401054
+  loc_0045BBD2: call var_8014 = global_004010F4(arg_10, var_38)
+  loc_0045BBE1: var_40 = var_4C
+  loc_0045BBEB: call var_8018 = global_00401194
+  loc_0045BC03: call var_801C = global_004011CC
+  loc_0045BC0D: If (RegOpenKeyEx(arg_C, var_8008, , , ) = 0) Then
+  loc_0045BC22:   call var_8020 = global_00401188(var_38, arg_14, 0, 00000004h, arg_18, 00000004h)
+  loc_0045BC2D:   call var_8024 = global_00401170(var_24, var_8020)
+  loc_0045BC38:   call var_802C = global_00401054
+  loc_0045BC42:   call var_8030 = global_004010F4(arg_14, var_38)
+  loc_0045BC5A:   call var_8034 = global_004011CC
+  loc_0045BC64:   If (RegSetValueEx(var_8024, , , , , ) = 0) Then
+  loc_0045BC6A:     call var_8038 = global_00401170(var_24)
+  loc_0045BC6D:     var_803C = RegCloseKey(var_8038)
+  loc_0045BC72:     call var_8040 = global_00401054
+  loc_0045BC74:   End If
+  loc_0045BC74: End If
+  loc_0045BC79: GoTo loc_0045BC94
+  loc_0045BC7F: If var_4 Then
+  loc_0045BC84:   call var_8044 = global_00401014(global_0045BC9E)
+  loc_0045BC8A: End If
+  loc_0045BC8D: call var_8048 = global_004011CC
+  loc_0045BC93: Exit Sub
+  loc_0045BC94: ' Referenced from: 0045BC79
+  loc_0045BC97: call var_804C = global_00401014
+End Sub
 
-Private Sub Proc_2_2_45BCD0() '45BCD0
-  push ebp
-  mov ebp, esp
-  sub esp, 00000008h
-  push 00403896h ; ext_4010EC
-  mov eax, fs:[00000000h]
-  push eax
-  mov fs:[00000000h], esp
-  sub esp, 00000074h
-  push ebx
-  push esi
-  push edi
-  mov var_8, esp
-  mov var_4, 00403010h
-  mov ecx, 0000000Ah
-  xor eax, eax
-  lea edi, var_38
-  xor ebx, ebx
-  repz stosd
-  mov ecx, 0000000Ah
-  lea edi, var_80
-  repz stosd
-  mov eax, [00460558h]
-  mov var_3C, ebx
-  cmp eax, ebx
-  mov var_40, ebx
-  mov var_44, ebx
-  mov var_38, 00006008h
-  jnz 0045BD3Ah
-  push 00460558h
-  push 00418EE0h
-  call [00401134h]
-  mov esi, [00460558h]
-  lea ecx, var_40
-  push ecx
-  push esi
-  mov eax, [esi]
-  call [eax+00000014h]
-  cmp eax, ebx
-  fnclex
-  jge 0045BD63h
-  mov edi, [00401058h]
-  push 00000014h
-  push 00418ED0h
-  push esi
-  push eax
-  call edi
-  jmp 0045BD69h
-  mov edi, [00401058h]
-  mov eax, var_40
-  lea ecx, var_44
-  push ecx
-  push eax
-  mov edx, [eax]
-  mov esi, eax
-  call [edx+00000100h]
-  cmp eax, ebx
-  fnclex
-  jge 0045BD8Fh
-  push 00000100h
-  push 00418EF0h
-  push esi
-  push eax
-  call edi
-  mov edx, var_44
-  mov ebx, [004011D4h]
-  lea ecx, var_40
-  mov var_28, edx
-  call ebx
-  push 0045BF20h
-  call 0045BF50h
-  mov esi, [00401148h]
-  mov edx, 0043A530h ; "#103"
-  lea ecx, var_18
-  mov var_34, eax
-  call global_00401148
-  mov edx, 0043A540h ; "RegEdit_RegEdit"
-  lea ecx, var_14
-  call global_00401148
-  lea eax, var_38
-  lea ecx, var_80
-  push eax
-  push ecx
-  push 00419148h
-  call [004010D4h]
-  push eax
-  call 004191D0h ; RegisterClass(%x1v)
-  mov var_44, eax
-  call [00401054h]
-  lea edx, var_80
-  lea eax, var_38
-  push edx
-  push eax
-  push 00419148h
-  call [00401038h]
-  mov esi, var_44
-  xor ecx, ecx
-  test esi, esi
-  setnz cl
-  lea edx, var_80
-  neg ecx
-  push edx
-  push 00419148h
-  mov si, cx
-  call [004011A0h]
-  test si, si
-  jz 0045BEC7h
-  mov eax, [00460558h]
-  test eax, eax
-  jnz 0045BE3Ch
-  push 00460558h
-  push 00418EE0h
-  call [00401134h]
-  mov esi, [00460558h]
-  lea ecx, var_40
-  push ecx
-  push esi
-  mov eax, [esi]
-  call [eax+00000014h]
-  test eax, eax
-  fnclex
-  jge 0045BE5Dh
-  push 00000014h
-  push 00418ED0h
-  push esi
-  push eax
-  call edi
-  mov eax, var_40
-  lea ecx, var_44
-  push ecx
-  push eax
-  mov edx, [eax]
-  mov esi, eax
-  call [edx+00000100h]
-  test eax, eax
-  fnclex
-  jge 0045BE83h
-  push 00000100h
-  push 00418EF0h
-  push esi
-  push eax
-  call edi
-  mov edx, var_44
-  push 00000000h
-  push edx
-  push 00000000h
-  push 00000000h
-  push 00000000h
-  push 00000000h
-  push 00000000h
-  push 00000000h
-  push 00000000h
-  push 00000000h
-  lea eax, var_3C
-  push 0043A540h ; "RegEdit_RegEdit"
-  push eax
-  call [00401188h]
-  push eax
-  push 00040000h
-  call 00419188h ; CreateWindowEx(%x1v, %x2v, %x3v, %x4v, %x5v, %x6v, %x7v, %x8v, %x9v, %x10v, %x11v, %x12v)
-  call [00401054h]
-  lea ecx, var_3C
-  call [004011CCh]
-  lea ecx, var_40
-  call ebx
-  push 0045BF00h
-  jmp 0045BEE1h
-  lea ecx, var_3C
-  call [004011CCh]
-  lea ecx, var_40
-  call [004011D4h]
-  ret
-  lea ecx, var_80
-  push ecx
-  push 00419148h
-  call [004011A0h]
-  lea edx, var_38
-  push edx
-  push 00419148h
-  call [00401050h]
-  ret
-  mov ecx, var_10
-  pop edi
-  pop esi
-  mov fs:[00000000h], ecx
-  pop ebx
-  mov esp, ebp
-  pop ebp
-  ret
-  nop
+Private Sub Proc_2_2_45BCD0
+  loc_0045BCD6: ext_4010EC
+  loc_0045BD28: If global_00460558 = 0 Then
+  loc_0045BD34:   call var_8004 = global_00401134(global_00418EE0, global_00460558, 0, 0, 0)
+  loc_0045BD3A: End If
+  loc_0045BD47: var_40 = global_00460558.UnkVCall_00000014h
+  loc_0045BD4E: If var_40 < 0 Then
+  loc_0045BD5F:   call var_8008 = global_00401058(var_40, global_00460558, global_00418ED0, 00000014h)
+  loc_0045BD63: Else
+  loc_0045BD69: End If
+  loc_0045BD75: var_44 = var_40.UnkVCall_00000100h
+  loc_0045BD7F: If var_44 < 0 Then
+  loc_0045BD8D:   call var_800C = global_00401058(var_44, var_40, global_00418EF0, 00000100h)
+  loc_0045BD8F: End If
+  loc_0045BD9B: var_28 = var_44
+  loc_0045BD9E: call var_8010 = global_004011D4
+  loc_0045BDB8: var_34 = Proc_45BF50(global_0045BF20)
+  loc_0045BDBB: call var_8018 = global_00401148
+  loc_0045BDC5: call var_801C = global_00401148
+  loc_0045BDD4: call var_8020 = global_004010D4(global_00419148, var_80, var_38)
+  loc_0045BDE3: call var_8028 = global_00401054
+  loc_0045BDF6: call var_802C = global_00401038(global_00419148, var_38, var_80)
+  loc_0045BE14: call var_8030 = global_004011A0(global_00419148, var_80)
+  loc_0045BE1D: If (RegisterClass(var_8020)) Then
+  loc_0045BE2A:   If global_00460558 = 0 Then
+  loc_0045BE36:     call var_8034 = global_00401134(global_00418EE0, global_00460558)
+  loc_0045BE3C:   End If
+  loc_0045BE49:   var_40 = global_00460558.UnkVCall_00000014h
+  loc_0045BE50:   If var_40 < 0 Then
+  loc_0045BE5B:     call var_8038 = global_00401058(var_40, global_00460558, global_00418ED0, 00000014h)
+  loc_0045BE5D:   End If
+  loc_0045BE69:   var_44 = var_40.UnkVCall_00000100h
+  loc_0045BE73:   If var_44 < 0 Then
+  loc_0045BE81:     call var_803C = global_00401058(var_44, var_40, global_00418EF0, 00000100h)
+  loc_0045BE83:   End If
+  loc_0045BEA2:   call var_8040 = global_00401188(var_3C, "RegEdit_RegEdit", 00000000h, 00000000h, 00000000h, 00000000h, 00000000h, 00000000h, 00000000h, 00000000h, var_44, 00000000h)
+  loc_0045BEAE:   var_8044 = CreateWindowEx(262144, var_8040, , , , , , , , , , )
+  loc_0045BEB3:   call var_8048 = global_00401054
+  loc_0045BEBC:   call var_804C = global_004011CC
+  loc_0045BEC5:   call var_8050 = global_004011D4
+  loc_0045BEC7: End If
+  loc_0045BECC: GoTo loc_0045BEE1
+  loc_0045BED1: call var_8054 = global_004011CC(global_0045BF00)
+  loc_0045BEDA: call var_8058 = global_004011D4
+  loc_0045BEE0: Exit Sub
+  loc_0045BEE1: ' Referenced from: 0045BECC
+  loc_0045BEEA: call var_805C = global_004011A0(global_00419148, var_80)
+  loc_0045BEF9: call var_8060 = global_00401050(global_00419148, var_38)
 End Sub
